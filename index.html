@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website in ₹999 — Arkose Infosoft</title>
+<meta name="description" content="Get a professional business website — WordPress or fully custom coded — for just ₹999. Limited slots.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141311;
+    --paper:#fbfaf7;
+    --paper-2:#ffffff;
+    --line:#e7e3da;
+    --blue:#1a3fdb;
+    --blue-dark:#122ea3;
+    --gold:#e8a13a;
+    --green:#1f8f5f;
+    --red:#c9402d;
+    --muted:#6b675f;
+    --radius:14px;
+    --serif: "Fraunces", serif;
+    --sans: "Inter", sans-serif;
+    --mono: "JetBrains Mono", monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(20,19,17,0.055) 1px, transparent 0);
+    background-size: 22px 22px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- offer bar ---------- */
+  .offerbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--ink);
+    color:#fff;
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.02em;
+  }
+  .offerbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:9px 24px; gap:14px; flex-wrap:wrap;
+  }
+  .offerbar .msg{display:flex; align-items:center; gap:10px;}
+  .offerbar .dot{width:7px;height:7px;border-radius:50%;background:#38d67a;animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+  .offerbar .timer{display:flex; gap:6px; align-items:center; font-weight:700;}
+  .offerbar .timer span.box{background:rgba(255,255,255,.12); padding:3px 7px; border-radius:5px; min-width:26px; text-align:center;}
+
+  /* ---------- header ---------- */
+  header.top{padding:26px 0 0;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:700; font-size:20px;}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:700;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:56px 0 40px; position:relative;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center;}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;}}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--blue-dark); background:rgba(26,63,219,.08); border:1px solid rgba(26,63,219,.22);
+    padding:6px 12px; border-radius:100px; margin-bottom:20px;
+  }
+  h1{
+    font-family:var(--serif); font-weight:600; font-size:clamp(34px,5vw,58px);
+    line-height:1.03; letter-spacing:-0.01em; margin:0 0 20px;
+  }
+  h1 em{font-style:italic; font-weight:500; color:var(--blue);}
+  .sub{font-size:17px; line-height:1.6; color:var(--muted); max-width:46ch; margin:0 0 30px;}
+  .hero-ctas{display:flex; gap:14px; align-items:center; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--sans); font-weight:700; font-size:15px;
+    padding:15px 26px; border-radius:10px; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+  }
+  .btn-primary{background:var(--blue); color:#fff; box-shadow:0 6px 0 var(--blue-dark);}
+  .btn-primary:active{transform:translateY(4px); box-shadow:0 2px 0 var(--blue-dark);}
+  .btn-ghost{background:transparent; color:var(--ink); border:1.5px solid var(--line);}
+  .hero-note{font-family:var(--mono); font-size:12px; color:var(--muted); margin-top:14px;}
+
+  /* signature price stamp */
+  .stamp-wrap{display:flex; justify-content:center; position:relative;}
+  .stamp{
+    width:270px; height:270px; border-radius:50%;
+    background:var(--paper-2);
+    border:2.5px dashed var(--ink);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    transform:rotate(-8deg);
+    box-shadow:0 18px 40px rgba(20,19,17,.12);
+    position:relative;
+  }
+  .stamp:before{
+    content:""; position:absolute; inset:14px; border:1px solid rgba(20,19,17,.25); border-radius:50%;
+  }
+  .stamp .was{font-family:var(--mono); color:var(--red); text-decoration:line-through; font-size:15px;}
+  .stamp .now{font-family:var(--serif); font-weight:800; font-size:52px; line-height:1;}
+  .stamp .now sup{font-size:22px; font-weight:700; margin-right:2px;}
+  .stamp .cap{font-family:var(--mono); text-transform:uppercase; font-size:11px; letter-spacing:.12em; margin-top:6px; color:var(--muted);}
+  .stamp .ring-badge{
+    position:absolute; top:-14px; right:6px; background:var(--gold); color:var(--ink);
+    font-family:var(--mono); font-weight:700; font-size:11px; padding:6px 10px; border-radius:100px;
+    transform:rotate(10deg); box-shadow:0 4px 10px rgba(0,0,0,.15);
+  }
+
+  /* ---------- badges strip ---------- */
+  .badges-strip{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px 0; background:var(--paper-2);}
+  .badges-strip .wrap{display:flex; gap:38px; align-items:center; justify-content:center; flex-wrap:wrap;}
+  .badge-item{display:flex; flex-direction:column; align-items:center; gap:6px; opacity:.85; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted);}
+  .badge-item img{height:40px; width:auto; filter:grayscale(1); opacity:.7;}
+
+  /* ---------- section heading ---------- */
+  .section{padding:74px 0;}
+  .section-head{max-width:600px; margin:0 auto 44px; text-align:center;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-family:var(--serif); font-weight:600; font-size:clamp(26px,3.4vw,38px); margin:0 0 12px; letter-spacing:-.01em;}
+  .section-head p{color:var(--muted); font-size:15.5px; line-height:1.6; margin:0;}
+
+  /* ---------- include/exclude ---------- */
+  .ie-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:760px){.ie-grid{grid-template-columns:1fr;}}
+  .ie-card{border-radius:var(--radius); padding:30px; background:var(--paper-2); border:1.5px solid var(--line);}
+  .ie-card.included{border-color:rgba(31,143,95,.35);}
+  .ie-card.excluded{border-color:rgba(201,64,45,.3);}
+  .ie-card h3{font-family:var(--serif); font-size:21px; margin:0 0 4px; display:flex; align-items:center; gap:10px;}
+  .ie-card .tag{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:18px; display:block;}
+  .ie-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;}
+  .ie-list li{display:flex; align-items:flex-start; gap:10px; font-size:14.5px; line-height:1.45;}
+  .ie-card.included .ico{color:var(--green); font-weight:800;}
+  .ie-card.excluded .ico{color:var(--red); font-weight:800;}
+  .ico{flex:none; width:19px; height:19px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; margin-top:1px;}
+  .ie-card.included .ico{background:rgba(31,143,95,.12);}
+  .ie-card.excluded .ico{background:rgba(201,64,45,.1);}
+
+  /* ---------- demo projects ---------- */
+  .demo-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:920px){.demo-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.demo-grid{grid-template-columns:1fr;}}
+  .demo-card{
+    border:1.5px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--paper-2);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .demo-card:hover{transform:translateY(-5px); box-shadow:0 16px 34px rgba(20,19,17,.1);}
+  .demo-thumb{
+    height:150px; position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-size:15px; color:#fff; text-align:center; padding:16px;
+  }
+  .demo-thumb span{position:relative; z-index:2;}
+  .demo-thumb:after{content:""; position:absolute; inset:0; background:linear-gradient(160deg, rgba(0,0,0,.15), rgba(0,0,0,.35));}
+  .demo-body{padding:18px 18px 20px;}
+  .demo-body .kicker{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--blue-dark);}
+  .demo-body h4{font-family:var(--serif); font-size:18px; margin:6px 0 6px;}
+  .demo-body p{font-size:13.5px; color:var(--muted); line-height:1.5; margin:0 0 14px;}
+  .demo-link{font-family:var(--mono); font-size:12px; font-weight:700; color:var(--ink); text-decoration:none; display:inline-flex; align-items:center; gap:6px; border-bottom:1.5px solid var(--ink); padding-bottom:2px;}
+
+  /* ---------- pricing / cta ticket ---------- */
+  .ticket{
+    background:var(--ink); color:#fff; border-radius:20px; padding:0; overflow:hidden;
+    display:grid; grid-template-columns:1.3fr 1px 1fr; position:relative;
+  }
+  @media (max-width:760px){.ticket{grid-template-columns:1fr;}}
+  .ticket .perf{display:none;}
+  @media (max-width:760px){
+    .ticket .stub{border-top:2px dashed rgba(255,255,255,.25);}
+  }
+  .ticket .info{padding:44px; }
+  .ticket .info .eyebrow{background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); color:#fff;}
+  .ticket .info h3{font-family:var(--serif); font-size:clamp(24px,3vw,32px); margin:14px 0 12px; line-height:1.15;}
+  .ticket .info p{color:rgba(255,255,255,.7); font-size:14.5px; line-height:1.6; max-width:42ch;}
+  .ticket .divider{background:repeating-linear-gradient(180deg, rgba(255,255,255,.35) 0 8px, transparent 8px 16px); width:1px;}
+  .ticket .stub{padding:44px; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:14px;}
+  .ticket .price-row{display:flex; align-items:baseline; gap:10px;}
+  .ticket .price-row .was{font-family:var(--mono); text-decoration:line-through; color:rgba(255,255,255,.45); font-size:16px;}
+  .ticket .price-row .now{font-family:var(--serif); font-weight:800; font-size:44px;}
+  .ticket .stub .btn-primary{background:#fff; color:var(--ink); box-shadow:0 6px 0 rgba(255,255,255,.35); width:100%; justify-content:center;}
+  .ticket .stub .note{font-family:var(--mono); font-size:11px; color:rgba(255,255,255,.55);}
+
+  footer{padding:40px 0 60px; text-align:center;}
+  footer p{font-family:var(--mono); font-size:12px; color:var(--muted);}
+
+  .checks-decor{font-family:var(--mono);}
+  ::selection{background:var(--gold); color:var(--ink);}
+</style>
+</head>
+<body>
+
+<div class="offerbar">
+  <div class="wrap">
+    <div class="msg"><span class="dot"></span> Launch offer — only a few slots left this week</div>
+    <div class="timer" id="timer">
+      <span class="box" id="t-h">00</span>h
+      <span class="box" id="t-m">00</span>m
+      <span class="box" id="t-s">00</span>s
+    </div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <div class="logo"><span class="mark">AI</span> Arkose Infosoft</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">● Website Development · Launch Offer</span>
+      <h1>A business website built &amp; live, for <em>just ₹999</em></h1>
+      <p class="sub">WordPress or fully custom-coded — your choice. Same premium build our full-price clients get, at a launch price for the first batch of businesses this month.</p>
+      <div class="hero-ctas">
+        <a href="#pricing" class="btn btn-primary">Claim my ₹999 website →</a>
+        <a href="#demos" class="btn btn-ghost">See live demo sites</a>
+      </div>
+      <p class="hero-note">No hidden charges · Delivered in 5–7 days · Free hosting setup guidance</p>
+    </div>
+    <div class="stamp-wrap">
+      <div class="stamp">
+        <span class="ring-badge">IT'S LIVE</span>
+        <span class="was">₹14,999</span>
+        <span class="now"><sup>₹</sup>999</span>
+        <span class="cap">Full Website</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="badges-strip">
+  <div class="wrap">
+    <div class="badge-item">🔒 SSL Secured</div>
+    <div class="badge-item">⚡ Cloudflare CDN</div>
+    <div class="badge-item">📱 Mobile Responsive</div>
+    <div class="badge-item">🛠 WordPress + Custom Code</div>
+    <div class="badge-item">✅ 5,00,000+ Businesses Trust Similar Builds</div>
+  </div>
+</section>
+
+<section class="section" id="included">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Transparency first</span>
+      <h2>What's included — and what isn't</h2>
+      <p>No confusion, no upsell traps. Here's exactly what your ₹999 covers.</p>
+    </div>
+    <div class="ie-grid">
+      <div class="ie-card included">
+        <span class="tag">Included in ₹999</span>
+        <h3>✅ Everything you need to go live</h3>
+        <ul class="ie-list">
+          <li><span class="ico">✓</span> Responsive mobile-first design (WordPress or custom code)</li>
+          <li><span class="ico">✓</span> Hero banner, services, about, gallery &amp; testimonials sections</li>
+          <li><span class="ico">✓</span> WhatsApp chat button + click-to-call button</li>
+          <li><span class="ico">✓</span> Google Maps embed &amp; contact form</li>
+          <li><span class="ico">✓</span> FAQ section + Google review button</li>
+          <li><span class="ico">✓</span> SSL certificate + Cloudflare CDN &amp; security</li>
+          <li><span class="ico">✓</span> Basic on-page SEO + schema markup</li>
+          <li><span class="ico">✓</span> QR code to website &amp; WhatsApp</li>
+          <li><span class="ico">✓</span> Google Analytics &amp; Search Console setup</li>
+        </ul>
+      </div>
+      <div class="ie-card excluded">
+        <span class="tag">Not included in ₹999</span>
+        <h3>✕ Add-ons available separately</h3>
+        <ul class="ie-list">
+          <li><span class="ico">✕</span> Custom domain purchase (~₹500–₹1200/yr)</li>
+          <li><span class="ico">✕</span> AI business assistant trained on your data</li>
+          <li><span class="ico">✕</span> Instant quote / pricing calculator widgets</li>
+          <li><span class="ico">✕</span> Multi-language toggle (Hindi/English)</li>
+          <li><span class="ico">✕</span> Appointment booking with Google Calendar</li>
+          <li><span class="ico">✕</span> E-commerce / online payment integration</li>
+          <li><span class="ico">✕</span> Ongoing content updates after handover</li>
+          <li><span class="ico">✕</span> Paid ads / marketing management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="demos" style="background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Proof, not promises</span>
+      <h2>5 single-page demo builds</h2>
+      <p>Sample layouts across different business types — this is the quality every ₹999 website ships with.</p>
+    </div>
+    <div class="demo-grid" id="demo-grid"></div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="info">
+        <span class="eyebrow">Limited launch batch</span>
+        <h3>Get your business online this week — not next month.</h3>
+        <p>Send your business details on WhatsApp, pick WordPress or custom code, and we start today. Slots refill every Monday.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="stub">
+        <div class="price-row"><span class="was">₹14,999</span><span class="now">₹999</span></div>
+        <a href="#" class="btn btn-primary">Book my ₹999 website →</a>
+        <span class="note">Offer expires in <span id="t2-h">00</span>h <span id="t2-m">00</span>m <span id="t2-s">00</span>s</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year"></span> Arkose Infosoft — Innovate · Amplify · Scale</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Countdown timer — resets each day to keep urgency evergreen
+  function getDeadline(){
+    const d = new Date();
+    d.setHours(23,59,59,999);
+    return d;
+  }
+  let deadline = getDeadline();
+  function tick(){
+    let diff = deadline - new Date();
+    if(diff <= 0){ deadline = getDeadline(); diff = deadline - new Date(); }
+    const h = String(Math.floor(diff/3600000)).padStart(2,'0');
+    const m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    const s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+    ['t-h','t2-h'].forEach(id=>document.getElementById(id).textContent=h);
+    ['t-m','t2-m'].forEach(id=>document.getElementById(id).textContent=m);
+    ['t-s','t2-s'].forEach(id=>document.getElementById(id).textContent=s);
+  }
+  tick(); setInterval(tick,1000);
+
+  // Demo project cards
+  const demos = [
+    {kicker:'Restaurant & Cafe', title:'The Copper Kettle', desc:'Menu showcase, table booking CTA & Google reviews strip.', grad:'linear-gradient(160deg,#c9402d,#7a1f12)'},
+    {kicker:'Salon & Spa', title:'Glow Studio', desc:'Service pricing cards, before/after slider, WhatsApp booking.', grad:'linear-gradient(160deg,#a34ed6,#3f1a6b)'},
+    {kicker:'Real Estate', title:'Nestwell Properties', desc:'Property listings, EMI calculator teaser, contact form.', grad:'linear-gradient(160deg,#1a3fdb,#0b1a5c)'},
+    {kicker:'Fitness & Gym', title:'IronCore Fitness', desc:'Trainer profiles, plan comparison, click-to-call CTA.', grad:'linear-gradient(160deg,#1f8f5f,#0c3d29)'},
+    {kicker:'Clinic & Healthcare', title:'CarePoint Clinic', desc:'Doctor bios, appointment CTA, FAQ & map embed.', grad:'linear-gradient(160deg,#e8a13a,#8a5210)'}
+  ];
+  const grid = document.getElementById('demo-grid');
+  demos.forEach(d=>{
+    const el = document.createElement('div');
+    el.className = 'demo-card';
+    el.innerHTML = `
+      <div class="demo-thumb" style="background:${d.grad}"><span>${d.title}</span></div>
+      <div class="demo-body">
+        <span class="kicker">${d.kicker}</span>
+        <h4>${d.title}</h4>
+        <p>${d.desc}</p>
+        <a href="#" class="demo-link">View demo ↗</a>
+      </div>`;
+    grid.appendChild(el);
+  });
+</script>
+</body>
+</html>
