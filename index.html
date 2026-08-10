@@ -76,12 +76,47 @@
     color:var(--red-deep);
   }
 
+  /* ---------- top announcement ticker ---------- */
+  .top-ticker{
+    background:#16120e;color:#fff;font-size:13px;padding:8px 0;position:relative;z-index:70;
+    border-bottom:1px solid rgba(220,156,52,0.25);
+  }
+  .ticker-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .ticker-left{display:flex;align-items:center;gap:8px;font-weight:600;letter-spacing:.01em;}
+  .pulse-dot{
+    width:8px;height:8px;border-radius:50%;background:#22c55e;
+    box-shadow:0 0 8px #22c55e;
+    animation:pulseGreen 1.8s infinite ease-in-out;
+    flex-shrink:0;
+  }
+  @keyframes pulseGreen{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:.4;transform:scale(0.85);}
+  }
+  .ticker-right{display:flex;align-items:center;gap:6px;font-family:monospace,sans-serif;}
+  .timer-box{
+    background:#262019;border:1px solid rgba(220,156,52,0.3);
+    border-radius:4px;padding:3px 7px;display:flex;align-items:center;gap:3px;
+  }
+  .timer-box span{font-weight:700;font-size:13.5px;color:#fff;}
+  .timer-box small{font-size:10px;color:var(--gold);font-family:var(--sans);font-weight:600;}
+
+  @media(max-width:680px){
+    .top-ticker{font-size:11.5px;padding:6px 0;}
+    .ticker-wrap{flex-direction:row;justify-content:space-between;gap:8px;}
+    .ticker-left span.full-text{display:none;}
+    .ticker-left::after{content:"स्पेशल लॉन्च ऑफर";font-size:11.5px;}
+    .timer-box{padding:2px 5px;}
+    .timer-box span{font-size:12px;}
+    .timer-box small{font-size:9.5px;}
+  }
+
   /* ---------- nav ---------- */
-  .nav{position:sticky;top:0;z-index:60;background:rgba(250,246,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--paper-line);}
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;}
+  .nav{position:sticky;top:0;z-index:60;background:rgba(250,246,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper-line);}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;}
   .nav .brand{display:flex;align-items:center;gap:10px;}
-  .nav .brand img{height:40px;width:auto;}
-  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:3px;box-shadow:0 2px 0 var(--red-deep);}
+  .nav .brand img{height:60px;max-height:64px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(140,32,21,0.06));}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:700;font-size:13.5px;padding:12px 22px;border-radius:4px;box-shadow:0 3px 0 var(--red-deep);}
 
   /* ---------- hero ---------- */
   .hero{padding:56px 0 0;overflow:hidden;}
@@ -227,7 +262,7 @@
   /* ---------- demos ---------- */
   .demo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
   @media(max-width:920px){.demo-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:560px){.demo-grid{grid-template-columns:1fr;}}
+  .carousel-hint{display:none;}
   .demo-card{background:var(--card);border:1px solid var(--paper-line);box-shadow:0 10px 24px rgba(140,32,21,.06);transition:transform .18s ease, box-shadow .18s ease;}
   .demo-card:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(140,32,21,.12);}
   .plate{position:relative;padding:22px 16px;display:flex;flex-direction:column;justify-content:space-between;min-height:104px;border-bottom:1px solid rgba(0,0,0,.06);}
@@ -310,7 +345,7 @@
   footer{background:var(--paper-2);color:var(--muted);padding:44px 0 50px;border-top:1px solid var(--paper-line);}
   footer .wrap{text-align:center;}
   footer .flinks{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:22px;}
-  footer .flogo{height:46px;margin:0 auto 12px;}
+  footer .flogo{height:68px;max-width:280px;object-fit:contain;margin:0 auto 14px;}
   footer .tag{font-size:12.5px;margin-bottom:12px;}
   footer .contact{font-size:12.5px;}
   footer .contact a{color:var(--red-deep);font-weight:600;}
@@ -356,8 +391,8 @@
     .wrap { padding: 0 16px; }
 
     /* Nav adjustments */
-    .nav .wrap { padding: 8px 16px; }
-    .nav .brand img { height: 34px; }
+    .nav .wrap { padding: 10px 16px; }
+    .nav .brand img { height: 48px; }
     .nav-cta { padding: 8px 12px; font-size: 12px; }
 
     /* Hero responsive adjustments */
@@ -407,16 +442,79 @@
     .bonus { padding: 26px 18px; }
     .lead-form { padding: 24px 18px; }
     .lead-form input { min-height: 46px; font-size: 15px; }
+
+    /* Live Previews horizontal scroll-snap carousel on mobile */
+    .demo-grid {
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scroll-behavior: smooth !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+      gap: 0 !important;
+      padding-bottom: 4px;
+    }
+    .demo-grid::-webkit-scrollbar {
+      display: none !important;
+    }
+    .demo-grid .demo-card {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      scroll-snap-align: center !important;
+      scroll-snap-stop: always !important;
+      box-sizing: border-box !important;
+    }
+    .carousel-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 16px 0 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--red-deep);
+      font-family: var(--sans);
+    }
+    .carousel-hint .arrow-left {
+      animation: bounceLeft 1.4s infinite ease-in-out;
+    }
+    .carousel-hint .arrow-right {
+      animation: bounceRight 1.4s infinite ease-in-out;
+    }
+    @keyframes bounceLeft {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(-4px); }
+    }
+    @keyframes bounceRight {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
+    }
   }
 
   @media (max-width: 400px) {
-    .nav .brand img { height: 28px; }
+    .nav .brand img { height: 40px; }
     .nav-cta { padding: 7px 10px; font-size: 11px; }
     h1 { font-size: 24px; }
   }
 </style>
 </head>
 <body>
+
+<!-- Top Limited-Time Offer Announcement Ticker -->
+<div class="top-ticker" aria-label="Limited Time Offer Banner">
+  <div class="wrap ticker-wrap">
+    <div class="ticker-left">
+      <span class="pulse-dot"></span>
+      <span class="full-text">स्पेशल ऑफर — इस हफ्ते ₹999 वेबसाइट के लिए केवल कुछ ही स्लॉट बाकी हैं</span>
+    </div>
+    <div class="ticker-right">
+      <div class="timer-box"><span id="t-hrs">08</span><small>घं</small></div>
+      <div class="timer-box"><span id="t-mins">16</span><small>मि</small></div>
+      <div class="timer-box"><span id="t-secs">19</span><small>से</small></div>
+    </div>
+  </div>
+</div>
 
 <nav class="nav">
   <div class="wrap">
@@ -592,6 +690,11 @@
       <p>नीचे दिए डेमोज़ में से मनपसंद डिज़ाइन चुनें — हम इसे आपके बिज़नेस के नाम, फोटो और डिटेल्स के साथ बदल देंगे।</p>
     </div>
     <div class="demo-grid" id="demo-grid"></div>
+    <div class="carousel-hint" aria-hidden="true">
+      <span class="arrow-left">←</span>
+      <span>स्वाइप करें</span>
+      <span class="arrow-right">→</span>
+    </div>
     <div class="note-box"><b>आपका बिज़नेस लिस्ट में नहीं है?</b> कोई बात नहीं — हर तरह के बिज़नेस के लिए कस्टमाइज़्ड डिज़ाइन उपलब्ध हैं। WhatsApp पर मैसेज करें, तुरंत भेजेंगे।</div>
   </div>
 </section>
@@ -770,6 +873,36 @@
 </div>
 
 <script>
+  // Live Countdown Timer
+  (function initTimer() {
+    let targetTime = localStorage.getItem('arkose_timer_target');
+    if (!targetTime || Date.now() > targetTime) {
+      targetTime = Date.now() + (8 * 3600 + 16 * 60 + 19) * 1000;
+      localStorage.setItem('arkose_timer_target', targetTime);
+    }
+    
+    function updateTimer() {
+      const now = Date.now();
+      let diff = Math.max(0, Math.floor((targetTime - now) / 1000));
+      
+      const hrs = Math.floor(diff / 3600);
+      diff %= 3600;
+      const mins = Math.floor(diff / 60);
+      const secs = diff % 60;
+      
+      const hEl = document.getElementById('t-hrs');
+      const mEl = document.getElementById('t-mins');
+      const sEl = document.getElementById('t-secs');
+      
+      if (hEl) hEl.textContent = String(hrs).padStart(2, '0');
+      if (mEl) mEl.textContent = String(mins).padStart(2, '0');
+      if (sEl) sEl.textContent = String(secs).padStart(2, '0');
+    }
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  })();
+
   const demos = [
     { cat:'Gym & Fitness', name:'Fitness & Gym Club', desc:'मेम्बरशिप प्लान्स, वर्कआउट शेड्यूल और ट्रेनर बुकिंग के साथ हाई-एनर्जी जिम वेबसाइट।' },
     { cat:'Beauty & Salon', name:'Radiant Beauty Parlour', desc:'हेयर स्टाइलिंग, मेकअप पैकेजेस और ऑनलाइन अपॉइंटमेंट शेड्यूलिंग के साथ लग्जरी सैलून वेबसाइट।' },
