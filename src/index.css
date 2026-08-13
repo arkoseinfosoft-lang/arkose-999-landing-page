@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Tiro Devanagari Hindi", "Noto Sans Devanagari", serif;
+  --font-serif-hi: "Tiro Devanagari Hindi", "Noto Sans Devanagari", serif;
+  --font-sans: "Hind", "Noto Sans Devanagari", sans-serif;
+
+  --color-paper: #faf6ec;
+  --color-paper-2: #f3e9d3;
+  --color-paper-line: #e4d5ab;
+  --color-card: #fffdf6;
+  --color-ink: #291d13;
+  --color-muted: #75674f;
+  --color-red: #c33526;
+  --color-red-deep: #8c2015;
+  --color-red-tint: #fbeae6;
+  --color-gold: #dc9c34;
+  --color-gold-deep: #a86f16;
+  --color-gold-tint: #faf0d9;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #2a1a05;
+}
+
+.font-serif-hi {
+  font-family: var(--font-serif-hi);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* ledger-paper texture layer -- fixed, subtle */
+.paper-texture {
+  position: fixed;
+  inset: -100px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3Cpath d='M0 60 L120 60 M60 0 L60 120' fill='none' stroke='%238c2015' stroke-width='0.4' opacity='0.05'/%3E%3Cpath d='M0 0 L120 120 M120 0 L0 120' fill='none' stroke='%23dc9c34' stroke-width='0.4' opacity='0.06'/%3E%3Cpolygon points='60 55 65 60 60 65 55 60' fill='%23dc9c34' opacity='0.16'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  animation: bgPatternPan 70s linear infinite;
+}
+.paper-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(220, 156, 52, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 40%, rgba(195, 53, 38, 0.08), transparent 50%),
+    radial-gradient(circle at 35% 85%, rgba(220, 156, 52, 0.1), transparent 45%);
+}
+@keyframes bgPatternPan {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(120px, 120px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper-texture { animation: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-paper); }
+::-webkit-scrollbar-thumb { background: var(--color-paper-line); border-radius: 6px; }
+
+@keyframes bounceLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-4px); }
+}
+@keyframes bounceRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+.section {
+  padding: 74px 0;
+}
+@media (max-width: 640px) {
+  .section {
+    padding: 48px 0;
+  }
+}
