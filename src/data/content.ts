@@ -53,14 +53,16 @@ export const whyUs = [
 ];
 
 export const demos = [
-  { cat: "Gym & Fitness", name: "Fitness & Gym Club", desc: "मेम्बरशिप प्लान्स, वर्कआउट शेड्यूल और ट्रेनर बुकिंग के साथ हाई-एनर्जी जिम वेबसाइट।" },
-  { cat: "Beauty & Salon", name: "Radiant Beauty Parlour", desc: "हेयर स्टाइलिंग, मेकअप पैकेजेस और ऑनलाइन अपॉइंटमेंट शेड्यूलिंग के साथ लग्जरी सैलून वेबसाइट।" },
-  { cat: "Finance & Insurance", name: "Insurance Protection Hub", desc: "इंश्योरेंस प्लान्स, टैक्स कंसल्टेशन और फाइनेंशियल सर्विसेज़ के लिए भरोसेमंद वेबसाइट।" },
-  { cat: "AC Technician", name: "AC Technician Guide", desc: "सर्विस बुकिंग, मेंटेनेंस गाइड्स और ट्रेनिंग ई-बुक के लिए समर्पित लैंडिंग पेज।" },
-  { cat: "Interior & Furniture", name: "Module Architects", desc: "मॉड्यूलर किचन, इंटीरियर डिज़ाइनिंग और मॉडर्न फर्नीचर शोकेस के लिए वेबसाइट।" },
-  { cat: "Real Estate", name: "Real Estate & Villa Sale", desc: "लक्जरी विला, प्लॉट्स और प्रॉपर्टी डीलर्स के लिए हाई-कन्वर्टिंग पोर्टल।" },
-  { cat: "Hotel & Dining", name: "Aurelia Hotel & Dining", desc: "डिजिटल मेन्यू कार्ड, रूम बुकिंग और टेबल रिज़र्वेशन के साथ होटल वेबसाइट।" },
-  { cat: "Healthcare", name: "Multi-Specialty Hospital", desc: "ऑनलाइन डॉक्टर अपॉइंटमेंट और इमरजेंसी सर्विसेज़ के साथ हॉस्पिटल वेबसाइट।" },
+  { cat: "Photography Studio", name: "Monika Studio Pro", desc: "प्रोफेशनल फोटोग्राफी पोर्टफोलियो, स्टूडियो बुकिंग और क्लाइंट गैलरी के साथ क्रिएटिव वेबसाइट।", url: "https://monika-studio-pro.vercel.app/" },
+  { cat: "Hotel & Dining", name: "Hotel View Demo", desc: "डिजिटल मेन्यू कार्ड, रूम बुकिंग और टेबल रिज़र्वेशन के साथ प्रीमियम होटल वेबसाइट।", url: "https://hotel-view-demo.vercel.app/" },
+  { cat: "Solar Energy", name: "Solis Solar", desc: "सोलर पैनल इंस्टॉलेशन, एनर्जी सेविंग कैलकुलेटर और लीड जेनरेशन के साथ सोलर कंपनी वेबसाइट।", url: "https://solis-solar.vercel.app/" },
+  { cat: "Dental Clinic", name: "Aurelia Dental", desc: "ऑनलाइन अपॉइंटमेंट, डेंटल सर्विसेज़ और डॉक्टर प्रोफाइल के साथ मॉडर्न डेंटल क्लिनिक वेबसाइट।", url: "https://aurelia-dental-jade.vercel.app/" },
+  { cat: "Education & Academy", name: "Uttarayan Academy", desc: "कोर्स लिस्टिंग, ऑनलाइन एडमिशन और स्टूडेंट पोर्टल के साथ प्रोफेशनल एकेडमी वेबसाइट।", url: "https://uttarayan-academy.vercel.app/" },
+  { cat: "Cafe & Restaurant", name: "Luxe Cafe", desc: "डिजिटल मेन्यू, टेबल बुकिंग और स्पेशल ऑफर्स के साथ लग्जरी कैफे वेबसाइट।", url: "https://luxe-cafe-nu.vercel.app/" },
+  { cat: "Law Firm", name: "Law Firm & Atelier Lumiere", desc: "लीगल सर्विसेज़, वकील प्रोफाइल और केस कंसल्टेशन बुकिंग के साथ प्रोफेशनल लॉ फर्म वेबसाइट।", url: "https://lawfirm-site-ochre.vercel.app/" },
+  { cat: "Automobile & Luxury", name: "Auto Luxe", desc: "प्रीमियम कार शोरूम, टेस्ट ड्राइव बुकिंग और लक्जरी व्हीकल शोकेस के साथ ऑटो वेबसाइट।", url: "https://auto-luxe-seven.vercel.app/" },
+  { cat: "Interior & Furniture", name: "Modular Luxe", desc: "मॉड्यूलर किचन, इंटीरियर डिज़ाइनिंग और मॉडर्न फर्नीचर शोकेस के लिए वेबसाइट।", url: "https://modular-luxe.vercel.app/" },
+  { cat: "Creative Studio", name: "Atelier Lumiere", desc: "क्रिएटिव आर्ट स्टूडियो, पोर्टफोलियो शोकेस और क्लाइंट प्रोजेक्ट गैलरी के साथ बेहतरीन वेबसाइट।", url: "https://atelier-lumiere-xi.vercel.app/" },
 ];
 
 export const pricingPlans = [
