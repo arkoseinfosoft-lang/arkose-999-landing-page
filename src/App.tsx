@@ -2,6 +2,7 @@ import SmoothScroll from "./lib/SmoothScroll";
 import Ticker from "./components/Ticker";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import SocialProof from "./components/SocialProof";
 import StatStrip from "./components/StatStrip";
 import Ledger from "./components/Ledger";
 import Problems from "./components/Problems";
@@ -25,6 +26,7 @@ export default function App() {
         <Nav />
         <main>
           <Hero />
+          <SocialProof />
           <StatStrip />
           <Ledger />
           <Problems />

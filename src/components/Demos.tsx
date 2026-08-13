@@ -26,8 +26,8 @@ export default function Demos() {
                     href={d.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative block overflow-hidden bg-gray-100"
-                    style={{ height: "140px" }}
+                    className="demo-card-preview group/preview relative block overflow-hidden bg-gray-100"
+                    style={{ height: "148px" }}
                   >
                     <iframe
                       src={d.url}
@@ -43,7 +43,11 @@ export default function Demos() {
                         pointerEvents: "none",
                       }}
                     />
-                    <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors duration-200" />
+                    <div className="overlay" />
+                    <div className="absolute right-2.5 top-2.5 z-10 flex items-center gap-1.5 rounded-full bg-ink/80 px-2 py-0.5 text-[10px] font-bold text-white backdrop-blur-md transition-transform group-hover/preview:scale-105">
+                      <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
+                      Live Site
+                    </div>
                   </a>
 
                   <div className="relative flex min-h-[72px] flex-col justify-between border-b border-t border-black/[0.06] p-4 sm:p-5">
@@ -51,7 +55,7 @@ export default function Demos() {
                     <span className="font-serif-hi text-[10.5px] uppercase tracking-wide opacity-80">
                       {d.cat}
                     </span>
-                    <span className="mt-2 font-serif-hi text-[16px] font-bold sm:text-[18px]">
+                    <span className="mt-2 font-serif-hi text-[16px] font-bold text-ink transition-colors group-hover:text-red-deep sm:text-[18px]">
                       {d.name}
                     </span>
                   </div>
@@ -63,10 +67,10 @@ export default function Demos() {
                       href={d.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-fit items-center gap-1 border-b border-gold pb-0.5 text-xs font-bold text-red-deep"
+                      className="inline-flex w-fit items-center gap-1.5 rounded border border-gold/40 bg-gold-tint/50 px-2.5 py-1 text-xs font-bold text-red-deep transition-all hover:border-gold hover:bg-gold-tint"
                     >
-                      Live Demo देखें
-                      <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                      <span>Live Demo देखें</span>
+                      <ArrowRight className="arrow-pulse h-3.5 w-3.5" />
                     </a>
                   </div>
                 </article>

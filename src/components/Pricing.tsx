@@ -1,11 +1,38 @@
-import { Check, ShieldCheck, Sparkles, Zap, MessageCircle } from "lucide-react";
+import { Check, ShieldCheck, Sparkles, Zap, MessageCircle, Clock } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 import SectionHead from "./SectionHead";
 import { pricingPlans, whatsappLink } from "../data/content";
 
+// Countdown — persisted in sessionStorage so it doesn't reset on scroll
+const DURATION = 25 * 60; // 25 minutes in seconds
+function useCountdown() {
+  const [secs, setSecs] = useState<number>(() => {
+    const stored = sessionStorage.getItem("cdown");
+    const t = stored ? parseInt(stored, 10) : DURATION;
+    return isNaN(t) || t <= 0 ? DURATION : t;
+  });
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSecs((s) => {
+        const next = s <= 1 ? DURATION : s - 1;
+        sessionStorage.setItem("cdown", String(next));
+        return next;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const m = String(Math.floor(secs / 60)).padStart(2, "0");
+  const s = String(secs % 60).padStart(2, "0");
+  return `${m}:${s}`;
+}
+
 export default function Pricing() {
   const plan = pricingPlans[0];
+  const countdown = useCountdown();
 
   return (
     <section className="section" id="pricing">
@@ -47,7 +74,7 @@ export default function Pricing() {
             {/* Price Box */}
             <div className="mb-6 rounded-xl border border-paper-line bg-gold-tint/60 p-4 sm:mb-8 sm:p-6">
               <div className="flex flex-wrap items-baseline gap-2.5 sm:gap-4">
-                <span className="font-serif-hi text-[36px] font-bold leading-none text-red-deep sm:text-[52px]">
+                <span className="price-pulse font-serif-hi text-[36px] font-bold leading-none text-red-deep sm:text-[52px]">
                   {plan.now}
                 </span>
                 {plan.was && (
@@ -108,6 +135,19 @@ export default function Pricing() {
             <div className="mb-6 rounded-lg bg-paper-2/70 p-3.5 text-center text-xs text-muted">
               💡 {plan.fine}
             </div>
+
+            {/* ⏳ Countdown urgency bar */}
+            <motion.div
+              animate={{ opacity: [0.85, 1, 0.85] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="mb-4 flex items-center justify-center gap-2 rounded-lg border border-red/30 bg-red-tint px-4 py-2.5 text-center"
+            >
+              <Clock className="h-4 w-4 shrink-0 text-red-deep" />
+              <span className="text-[13px] font-bold text-red-deep">
+                80% OFF खत्म होने में बचा समय:{" "}
+                <span className="font-serif-hi text-[15px] tracking-wider">{countdown}</span>
+              </span>
+            </motion.div>
 
             {/* CTA Button */}
             <motion.a

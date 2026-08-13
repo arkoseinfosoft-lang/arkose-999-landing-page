@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { ShieldCheck, Star, MessageCircle, ChevronDown } from "lucide-react";
+import { ShieldCheck, Star, MessageCircle, ChevronDown, Lock, Users } from "lucide-react";
 import { whatsappLink } from "../data/content";
 
 const container: Variants = {
@@ -36,9 +36,28 @@ export default function Hero() {
               <em className="not-italic text-red">₹999</em> में लाइव करें
             </motion.h1>
 
+            {/* Price contrast block */}
+            <motion.div
+              variants={item}
+              className="mt-5 inline-flex flex-wrap items-baseline gap-2.5 rounded-xl border border-gold bg-gold-tint/70 px-4 py-2.5"
+            >
+              <span className="font-serif-hi text-[13px] font-semibold text-muted line-through decoration-red/60">
+                ₹4,999
+              </span>
+              <span className="price-pulse font-serif-hi text-[38px] font-bold leading-none text-red-deep sm:text-[44px]">
+                ₹999
+              </span>
+              <span className="rounded-full bg-red px-2.5 py-0.5 text-[11px] font-bold text-white">
+                80% OFF
+              </span>
+              <span className="w-full text-[11px] font-semibold text-gold-deep">
+                वन-टाइम · कोई छुपा चार्ज नहीं
+              </span>
+            </motion.div>
+
             <motion.p
               variants={item}
-              className="mt-5 max-w-[480px] text-[15px] leading-[1.75] text-muted sm:text-[16.5px]"
+              className="mt-4 max-w-[480px] text-[15px] leading-[1.75] text-muted sm:text-[16.5px]"
             >
               पहले हम आपके बिज़नेस की वेबसाइट बनाकर दिखाते हैं। पसंद आए तभी
               भुगतान करें — कोई एडवांस नहीं, कोई शर्त नहीं।
@@ -58,7 +77,29 @@ export default function Hero() {
                 <MessageCircle className="h-[18px] w-[18px]" />
                 WhatsApp पर फ्री Demo बुक करें
               </motion.a>
-              <span className="text-[12.5px] text-muted">
+
+              {/* Trust icon row */}
+              <motion.div
+                variants={item}
+                className="flex flex-wrap items-center gap-2 pt-1"
+              >
+                {[
+                  { icon: <Lock className="h-3 w-3" />, label: "SSL Secure" },
+                  { icon: <ShieldCheck className="h-3 w-3" />, label: "Cloudflare" },
+                  { icon: <Users className="h-3 w-3" />, label: "320+ Clients" },
+                  { icon: <Star className="h-3 w-3 fill-gold text-gold" />, label: "4.9★ Rating" },
+                ].map((t) => (
+                  <span
+                    key={t.label}
+                    className="inline-flex items-center gap-1 rounded-full border border-paper-line bg-card px-2.5 py-1 text-[11px] font-semibold text-ink shadow-sm"
+                  >
+                    <span className="text-gold-deep">{t.icon}</span>
+                    {t.label}
+                  </span>
+                ))}
+              </motion.div>
+
+              <span className="text-[12px] text-muted">
                 जानकारी भरते ही WhatsApp खुल जाएगा — बिना नंबर सेव किए चैट शुरू करें
               </span>
             </motion.div>

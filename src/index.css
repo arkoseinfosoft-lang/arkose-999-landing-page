@@ -100,6 +100,75 @@ body {
   50% { transform: translateX(4px); }
 }
 
+/* ₹999 price glow pulse */
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 0px rgba(195,53,38,0), 0 0 0px rgba(195,53,38,0);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(195,53,38,0.45), 0 0 36px rgba(220,156,52,0.25);
+    transform: scale(1.03);
+  }
+}
+.price-pulse {
+  animation: pulse-glow 2.4s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Mobile bar urgency slot text */
+@keyframes slot-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.slot-pulse {
+  animation: slot-pulse 1.6s ease-in-out infinite;
+}
+
+/* Demo cards auto-scroll on desktop */
+@keyframes demo-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.demo-track {
+  display: flex;
+  width: max-content;
+  animation: demo-scroll 32s linear infinite;
+}
+.demo-track:hover {
+  animation-play-state: paused;
+}
+
+/* Card iframe zoom overlay */
+.demo-card-preview {
+  overflow: hidden;
+  position: relative;
+}
+.demo-card-preview iframe {
+  transition: transform 0.4s ease;
+}
+.demo-card-preview:hover iframe {
+  transform: scale(0.52) !important;
+  transform-origin: top left !important;
+}
+.demo-card-preview .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(250,246,236,0.7) 100%);
+  transition: opacity 0.3s;
+}
+.demo-card-preview:hover .overlay {
+  opacity: 0;
+}
+/* "Live देखें" arrow bounce */
+@keyframes arrowPulse {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+.arrow-pulse {
+  animation: arrowPulse 1.1s ease-in-out infinite;
+}
+
 .section {
   padding: 74px 0;
 }
@@ -108,3 +177,4 @@ body {
     padding: 48px 0;
   }
 }
+
