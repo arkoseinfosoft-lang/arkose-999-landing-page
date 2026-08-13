@@ -28,7 +28,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mb-3 text-[12.5px]">
-          Local Business Owners के लिए Premium Digital Web &amp; Ads Solutions
+          Local Business Owners के लिए Premium Website Development Solutions
         </div>
         <div className="text-[12.5px]">
           Email:{" "}

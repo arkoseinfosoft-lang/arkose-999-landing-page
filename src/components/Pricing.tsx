@@ -1,89 +1,131 @@
-import { Check } from "lucide-react";
+import { Check, ShieldCheck, Sparkles, Zap, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import SectionHead from "./SectionHead";
 import { pricingPlans, whatsappLink } from "../data/content";
 
-const toneStyles = {
-  gold: {
-    card: "border-[1.5px] border-gold shadow-[0_18px_40px_rgba(220,156,52,0.16)]",
-    flag: "text-gold-deep",
-    btn: "bg-gold text-[#2a1a05] shadow-[0_3px_0_var(--color-gold-deep)]",
-  },
-  muted: {
-    card: "border border-paper-line shadow-[0_16px_34px_rgba(140,32,21,0.06)]",
-    flag: "text-muted",
-    btn: "bg-red text-white shadow-[0_3px_0_var(--color-red-deep)]",
-  },
-  red: {
-    card: "border-[1.5px] border-red shadow-[0_18px_40px_rgba(195,53,38,0.14)]",
-    flag: "text-red-deep",
-    btn: "bg-red text-white shadow-[0_3px_0_var(--color-red-deep)]",
-  },
-};
-
 export default function Pricing() {
+  const plan = pricingPlans[0];
+
   return (
     <section className="section" id="pricing">
       <div className="mx-auto max-w-[1120px] px-4">
         <SectionHead
           center
-          eyebrow="Pricing & Packages"
+          eyebrow="Pricing & Offer"
           title={
             <>
-              हमारे <em className="not-italic text-red">सुपर-अफोर्डेबल</em> प्लान्स
+              हमारा <em className="not-italic text-red">सुपर-अफोर्डेबल</em> वेबसाइट प्लान
             </>
           }
-          body="वेबसाइट, फेसबुक एड्स और AI UGC वीडियो एड्स — पारदर्शी कीमतें, अपनी ज़रूरत के अनुसार प्लान चुनें।"
+          body="100% पारदर्शी कीमत, कोई छुपा चार्ज नहीं — सिर्फ़ ₹999 में अपने बिज़नेस को आज ही ऑनलाइन लाएं।"
         />
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
-          {pricingPlans.map((p, i) => {
-            const tone = toneStyles[p.tone];
-            return (
-              <Reveal
-                key={p.title}
-                direction="up"
-                delay={i * 0.12}
-                className={`flex flex-col bg-card p-7 ${tone.card}`}
-              >
-                <span className={`mb-3.5 block font-serif-hi text-[11.5px] font-bold tracking-wide ${tone.flag}`}>
-                  {p.flag}
+
+        <div className="mx-auto max-w-[820px]">
+          <Reveal
+            direction="up"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold bg-card p-6 shadow-[0_24px_50px_rgba(220,156,52,0.18)] sm:p-10"
+          >
+            {/* Top decorative badge */}
+            <div className="absolute right-0 top-0 rounded-bl-xl bg-gradient-to-l from-red to-red-deep px-4 py-1.5 font-serif-hi text-[12px] font-bold tracking-wider text-white shadow-sm">
+              80% OFF · LIMITED OFFER
+            </div>
+
+            <div className="mb-6">
+              <span className="mb-2 inline-flex items-center gap-1.5 font-serif-hi text-[12.5px] font-bold tracking-wide text-gold-deep">
+                <Sparkles className="h-4 w-4 text-gold" />
+                {plan.flag}
+              </span>
+              <h3 className="font-serif-hi text-[26px] font-bold text-ink sm:text-[32px]">
+                {plan.title}
+              </h3>
+              <p className="mt-2 text-[14.5px] leading-relaxed text-muted sm:text-[15.5px]">
+                {plan.desc}
+              </p>
+            </div>
+
+            {/* Price Box */}
+            <div className="mb-8 rounded-xl border border-paper-line bg-gold-tint/60 p-5 sm:p-6">
+              <div className="flex flex-wrap items-baseline gap-3 sm:gap-4">
+                <span className="font-serif-hi text-[42px] font-bold leading-none text-red-deep sm:text-[52px]">
+                  {plan.now}
                 </span>
-                <h3 className="mb-2 font-serif-hi text-[19px] font-bold text-ink">
-                  {p.title}
-                </h3>
-                <p className="mb-5 text-[13.3px] leading-relaxed text-muted">{p.desc}</p>
-                <div className="mb-1.5 flex items-baseline gap-2.5">
-                  <span className="font-serif-hi text-[32px] font-bold text-red-deep">
-                    {p.now}
+                {plan.was && (
+                  <span className="text-lg text-[#a89a7a] line-through sm:text-xl">
+                    {plan.was}
                   </span>
-                  {p.was && (
-                    <span className="text-sm text-[#b7a98a] line-through">{p.was}</span>
-                  )}
-                </div>
-                <span className="mb-5 block text-[11.5px] text-muted">{p.unit}</span>
-                <ul className="mb-5.5 flex flex-1 flex-col gap-2.5">
-                  {p.features.map((f) => (
-                    <li key={f} className="relative pl-[18px] text-[13.3px] leading-snug text-ink">
-                      <Check className="absolute left-0 top-[3px] h-[13px] w-[13px] text-gold-deep" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mb-4 block text-xs text-muted">{p.fine}</span>
-                <motion.a
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 2 }}
-                  href={whatsappLink(`Hi, mujhe "${p.title}" plan chahiye`)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`inline-flex w-full items-center justify-center rounded px-6 py-3.5 text-[15.5px] font-bold ${tone.btn}`}
-                >
-                  {p.cta}
-                </motion.a>
-              </Reveal>
-            );
-          })}
+                )}
+                <span className="rounded-full bg-red px-2.5 py-0.5 text-xs font-bold text-white">
+                  {plan.discount}
+                </span>
+              </div>
+              <span className="mt-2 block text-[13px] font-semibold text-muted">
+                {plan.unit}
+              </span>
+            </div>
+
+            {/* Trust Highlights */}
+            <div className="mb-8 grid grid-cols-2 gap-3 border-y border-paper-line py-4 sm:grid-cols-4">
+              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
+                <Zap className="h-4 w-4 shrink-0 text-gold-deep" />
+                <span>24–48 घंटे डिलीवरी</span>
+              </div>
+              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
+                <ShieldCheck className="h-4 w-4 shrink-0 text-gold-deep" />
+                <span>0% एडवांस फीस</span>
+              </div>
+              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
+                <Check className="h-4 w-4 shrink-0 text-gold-deep" />
+                <span>100% मोबाइल रेडी</span>
+              </div>
+              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
+                <Check className="h-4 w-4 shrink-0 text-gold-deep" />
+                <span>फ्री लाइफटाइम होस्टिंग</span>
+              </div>
+            </div>
+
+            {/* Features list */}
+            <div className="mb-8">
+              <h4 className="mb-4 font-serif-hi text-[15px] font-bold tracking-wide text-ink">
+                इस पैकेज में सब कुछ शामिल है:
+              </h4>
+              <ul className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+                {plan.features.map((f) => (
+                  <li
+                    key={f}
+                    className="relative flex items-start gap-2.5 text-[13.8px] leading-snug text-ink"
+                  >
+                    <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gold-tint text-gold-deep">
+                      <Check className="h-3 w-3 stroke-[3]" />
+                    </span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Fine print */}
+            <div className="mb-6 rounded-lg bg-paper-2/70 p-3.5 text-center text-xs text-muted">
+              💡 {plan.fine}
+            </div>
+
+            {/* CTA Button */}
+            <motion.a
+              whileHover={{ y: -2, scale: 1.01 }}
+              whileTap={{ y: 2, scale: 0.99 }}
+              href={whatsappLink(`Hi, mujhe ₹999 Premium Website plan chahiye`)}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-red px-6 py-4 text-[16px] font-bold text-white shadow-[0_4px_0_var(--color-red-deep)] transition-all hover:bg-red-deep sm:text-[17px]"
+            >
+              <MessageCircle className="h-5 w-5" />
+              {plan.cta}
+            </motion.a>
+
+            <p className="mt-3.5 text-center text-[12px] text-muted">
+              🔒 कोई एडवांस पेमेंट नहीं · 100% रिस्क-फ्री · पसंद आने पर ही भुगतान करें
+            </p>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ export default function Bonus() {
               ₹3,500 मूल्य के 2 Bonus बिल्कुल फ्री
             </h2>
             <p className="mx-auto max-w-[480px] text-[13.8px] leading-relaxed text-muted">
-              आज ही अपनी वेबसाइट या Facebook Ads ऑर्डर करें और दोनों बोनस सर्विसेज़ फ्री पाएं।
+              आज ही अपनी ₹999 वेबसाइट ऑर्डर करें और दोनों बोनस बिल्कुल फ्री पाएं।
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
