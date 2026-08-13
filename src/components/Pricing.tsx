@@ -24,34 +24,34 @@ export default function Pricing() {
         <div className="mx-auto max-w-[820px]">
           <Reveal
             direction="up"
-            className="relative overflow-hidden rounded-2xl border-2 border-gold bg-card p-6 shadow-[0_24px_50px_rgba(220,156,52,0.18)] sm:p-10"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold bg-card p-4.5 pt-9 shadow-[0_24px_50px_rgba(220,156,52,0.18)] sm:p-10"
           >
             {/* Top decorative badge */}
-            <div className="absolute right-0 top-0 rounded-bl-xl bg-gradient-to-l from-red to-red-deep px-4 py-1.5 font-serif-hi text-[12px] font-bold tracking-wider text-white shadow-sm">
+            <div className="absolute right-0 top-0 rounded-bl-xl bg-gradient-to-l from-red to-red-deep px-3 py-1 font-serif-hi text-[11px] font-bold tracking-wider text-white shadow-sm sm:px-4 sm:py-1.5 sm:text-[12px]">
               80% OFF · LIMITED OFFER
             </div>
 
-            <div className="mb-6">
-              <span className="mb-2 inline-flex items-center gap-1.5 font-serif-hi text-[12.5px] font-bold tracking-wide text-gold-deep">
-                <Sparkles className="h-4 w-4 text-gold" />
+            <div className="mb-5 sm:mb-6">
+              <span className="mb-1.5 inline-flex items-center gap-1.5 font-serif-hi text-[12px] font-bold tracking-wide text-gold-deep sm:text-[12.5px]">
+                <Sparkles className="h-3.5 w-3.5 text-gold sm:h-4 sm:w-4" />
                 {plan.flag}
               </span>
-              <h3 className="font-serif-hi text-[26px] font-bold text-ink sm:text-[32px]">
+              <h3 className="font-serif-hi text-[22px] font-bold text-ink sm:text-[32px]">
                 {plan.title}
               </h3>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-muted sm:text-[15.5px]">
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-muted sm:text-[15.5px]">
                 {plan.desc}
               </p>
             </div>
 
             {/* Price Box */}
-            <div className="mb-8 rounded-xl border border-paper-line bg-gold-tint/60 p-5 sm:p-6">
-              <div className="flex flex-wrap items-baseline gap-3 sm:gap-4">
-                <span className="font-serif-hi text-[42px] font-bold leading-none text-red-deep sm:text-[52px]">
+            <div className="mb-6 rounded-xl border border-paper-line bg-gold-tint/60 p-4 sm:mb-8 sm:p-6">
+              <div className="flex flex-wrap items-baseline gap-2.5 sm:gap-4">
+                <span className="font-serif-hi text-[36px] font-bold leading-none text-red-deep sm:text-[52px]">
                   {plan.now}
                 </span>
                 {plan.was && (
-                  <span className="text-lg text-[#a89a7a] line-through sm:text-xl">
+                  <span className="text-base text-[#a89a7a] line-through sm:text-xl">
                     {plan.was}
                   </span>
                 )}
@@ -59,27 +59,27 @@ export default function Pricing() {
                   {plan.discount}
                 </span>
               </div>
-              <span className="mt-2 block text-[13px] font-semibold text-muted">
+              <span className="mt-2 block text-[12px] font-semibold text-muted sm:text-[13px]">
                 {plan.unit}
               </span>
             </div>
 
             {/* Trust Highlights */}
-            <div className="mb-8 grid grid-cols-2 gap-3 border-y border-paper-line py-4 sm:grid-cols-4">
-              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
-                <Zap className="h-4 w-4 shrink-0 text-gold-deep" />
+            <div className="mb-6 grid grid-cols-2 gap-2 border-y border-paper-line py-3 sm:mb-8 sm:grid-cols-4 sm:gap-3 sm:py-4">
+              <div className="flex items-center gap-1.5 text-[11px] font-bold text-ink sm:gap-2 sm:text-[12.5px]">
+                <Zap className="h-3.5 w-3.5 shrink-0 text-gold-deep sm:h-4 sm:w-4" />
                 <span>24–48 घंटे डिलीवरी</span>
               </div>
-              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-gold-deep" />
+              <div className="flex items-center gap-1.5 text-[11px] font-bold text-ink sm:gap-2 sm:text-[12.5px]">
+                <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-gold-deep sm:h-4 sm:w-4" />
                 <span>0% एडवांस फीस</span>
               </div>
-              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
-                <Check className="h-4 w-4 shrink-0 text-gold-deep" />
+              <div className="flex items-center gap-1.5 text-[11px] font-bold text-ink sm:gap-2 sm:text-[12.5px]">
+                <Check className="h-3.5 w-3.5 shrink-0 text-gold-deep sm:h-4 sm:w-4" />
                 <span>100% मोबाइल रेडी</span>
               </div>
-              <div className="flex items-center gap-2 text-[12.5px] font-bold text-ink">
-                <Check className="h-4 w-4 shrink-0 text-gold-deep" />
+              <div className="flex items-center gap-1.5 text-[11px] font-bold text-ink sm:gap-2 sm:text-[12.5px]">
+                <Check className="h-3.5 w-3.5 shrink-0 text-gold-deep sm:h-4 sm:w-4" />
                 <span>फ्री लाइफटाइम होस्टिंग</span>
               </div>
             </div>

@@ -16,7 +16,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    if (prefersReduced) return;
+    const isMobile = window.innerWidth < 768;
+    if (prefersReduced || isMobile) return;
 
     const lenis = new Lenis({
       duration: 1.1,

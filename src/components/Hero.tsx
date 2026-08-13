@@ -68,41 +68,43 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-[360px] pt-7 md:pt-0"
+            className="relative mx-auto w-full max-w-[360px] py-8 md:py-0"
           >
             {/* trust badge */}
-            <motion.div
-              animate={{ y: [0, -8, 0], rotate: [-1.5, 1, -1.5] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 left-1/2 z-20 flex w-[92%] max-w-[270px] -translate-x-1/2 items-center justify-center gap-2.5 rounded-xl border border-gold bg-card/95 px-3.5 py-2 shadow-[0_12px_30px_rgba(140,32,21,0.12)] backdrop-blur-md md:left-[-28px] md:top-[-20px] md:w-auto md:max-w-none md:translate-x-0 md:justify-start"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-tint">
-                <ShieldCheck className="h-[18px] w-[18px] text-gold-deep" />
-              </span>
-              <span className="text-left">
-                <b className="block text-xs font-bold leading-tight text-ink">
-                  0% एडवांस पेमेंट
-                </b>
-                <span className="mt-0.5 block text-[10.5px] text-muted">
-                  100% रिस्क-फ्री गारंटी
+            <div className="absolute -top-3 inset-x-0 mx-auto z-20 flex justify-center md:inset-auto md:left-[-20px] md:top-[-16px] lg:left-[-28px] lg:top-[-20px]">
+              <motion.div
+                animate={{ y: [0, -8, 0], rotate: [-1.5, 1, -1.5] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="flex w-[90%] max-w-[260px] items-center justify-center gap-2.5 rounded-xl border border-gold bg-card/95 px-3 py-2 shadow-[0_12px_30px_rgba(140,32,21,0.12)] backdrop-blur-md md:w-auto"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-tint sm:h-8 sm:w-8">
+                  <ShieldCheck className="h-4 w-4 text-gold-deep sm:h-[18px] sm:w-[18px]" />
                 </span>
-              </span>
-            </motion.div>
+                <span className="text-left">
+                  <b className="block text-xs font-bold leading-tight text-ink">
+                    0% एडवांस पेमेंट
+                  </b>
+                  <span className="mt-0.5 block text-[10px] text-muted sm:text-[10.5px]">
+                    100% रिस्क-फ्री गारंटी
+                  </span>
+                </span>
+              </motion.div>
+            </div>
 
             {/* phone mockup */}
-            <div className="mx-auto max-w-[360px] rounded-[20px] border border-paper-line bg-card p-3.5 shadow-[0_24px_50px_rgba(140,32,21,0.1)]">
-              <div className="mb-3.5 flex items-center gap-2.5 border-b border-paper-line pb-3.5">
-                <div className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-gradient-to-br from-gold to-red font-serif-hi text-sm font-bold text-white">
+            <div className="mx-auto w-full max-w-[360px] rounded-[20px] border border-paper-line bg-card p-3 shadow-[0_24px_50px_rgba(140,32,21,0.1)] sm:p-3.5">
+              <div className="mb-3 flex items-center gap-2.5 border-b border-paper-line pb-3 sm:mb-3.5 sm:pb-3.5">
+                <div className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-gradient-to-br from-gold to-red font-serif-hi text-xs font-bold text-white sm:h-[34px] sm:w-[34px] sm:text-sm">
                   RS
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-ink">
+                  <div className="text-xs font-semibold text-ink sm:text-sm">
                     राहुल शर्मा · Fitness Club
                   </div>
-                  <div className="text-[11px] text-red">Arkose Infosoft • online</div>
+                  <div className="text-[10.5px] text-red sm:text-[11px]">Arkose Infosoft • online</div>
                 </div>
               </div>
-              <div className="flex min-h-[320px] flex-col gap-2.5 rounded-xl bg-[#f0ece0] p-3">
+              <div className="flex min-h-[300px] flex-col gap-2 rounded-xl bg-[#f0ece0] p-2.5 sm:min-h-[320px] sm:gap-2.5 sm:p-3">
                 <Bubble delay={0.9} align="left" time="10:14 AM">
                   नमस्ते, मुझे अपने जिम के लिए वेबसाइट चाहिए
                 </Bubble>
@@ -113,14 +115,14 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.7, duration: 0.5 }}
-                  className="max-w-[82%] self-start overflow-hidden rounded-[9px] rounded-tl-[2px] bg-white shadow-sm"
+                  className="max-w-[85%] self-start overflow-hidden rounded-[9px] rounded-tl-[2px] bg-white shadow-sm"
                 >
-                  <div className="flex h-[70px] items-end bg-gradient-to-br from-gold to-red p-2">
+                  <div className="flex h-[60px] items-end bg-gradient-to-br from-gold to-red p-2 sm:h-[70px]">
                     <b className="font-serif-hi text-xs text-white">
                       Fitness &amp; Gym Club
                     </b>
                   </div>
-                  <div className="p-2.5 text-[12.5px] text-muted">
+                  <div className="p-2 text-[11.5px] text-muted sm:p-2.5 sm:text-[12.5px]">
                     आपकी वेबसाइट लाइव है — देखिए और बताइए कैसी लगी
                   </div>
                 </motion.div>
@@ -131,7 +133,7 @@ export default function Hero() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 2.5 }}
-                  className="flex w-fit gap-1 self-start rounded-[9px] rounded-tl-[2px] bg-white px-3 py-2.5"
+                  className="flex w-fit gap-1 self-start rounded-[9px] rounded-tl-[2px] bg-white px-3 py-2 sm:py-2.5"
                 >
                   {[0, 1, 2].map((i) => (
                     <motion.span
@@ -146,23 +148,25 @@ export default function Hero() {
             </div>
 
             {/* rating badge */}
-            <motion.div
-              animate={{ y: [0, -7, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-              className="absolute -bottom-6 right-1/2 z-10 flex w-[92%] max-w-[270px] translate-x-1/2 items-center justify-center gap-2.5 rounded-xl border border-paper-line border-l-[3.5px] border-l-red bg-card/95 px-3.5 py-2 shadow-[0_12px_30px_rgba(140,32,21,0.12)] backdrop-blur-md md:bottom-6 md:right-[-32px] md:w-auto md:max-w-none md:translate-x-0 md:justify-start"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fff8e6]">
-                <Star className="h-[16px] w-[16px] fill-gold text-gold" />
-              </span>
-              <span className="text-left">
-                <b className="block text-xs font-bold leading-tight text-ink">
-                  4.9 / 5 Rating
-                </b>
-                <span className="mt-0.5 block text-[10.5px] text-muted">
-                  320+ खुश कस्टमर्स
+            <div className="absolute -bottom-4 inset-x-0 mx-auto z-10 flex justify-center md:inset-auto md:right-[-20px] md:bottom-6 lg:right-[-32px]">
+              <motion.div
+                animate={{ y: [0, -7, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                className="flex w-[90%] max-w-[260px] items-center justify-center gap-2.5 rounded-xl border border-paper-line border-l-[3.5px] border-l-red bg-card/95 px-3 py-2 shadow-[0_12px_30px_rgba(140,32,21,0.12)] backdrop-blur-md md:w-auto"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#fff8e6] sm:h-8 sm:w-8">
+                  <Star className="h-3.5 w-3.5 fill-gold text-gold sm:h-[16px] sm:w-[16px]" />
                 </span>
-              </span>
-            </motion.div>
+                <span className="text-left">
+                  <b className="block text-xs font-bold leading-tight text-ink">
+                    4.9 / 5 Rating
+                  </b>
+                  <span className="mt-0.5 block text-[10px] text-muted sm:text-[10.5px]">
+                    320+ खुश कस्टमर्स
+                  </span>
+                </span>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
 

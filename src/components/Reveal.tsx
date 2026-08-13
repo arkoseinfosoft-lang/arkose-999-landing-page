@@ -25,11 +25,16 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
+    const isMobile = window.innerWidth < 768;
+    const effDistance = isMobile ? Math.min(distance, 20) : distance;
+
     const from: gsap.TweenVars = { opacity: 0 };
-    if (direction === "up") from.y = distance;
-    if (direction === "left") from.x = -distance;
-    if (direction === "right") from.x = distance;
-    if (direction === "scale") from.scale = 0.94;
+    if (direction === "up") from.y = effDistance;
+    if (direction === "left") from.x = isMobile ? 0 : -effDistance;
+    if (direction === "left" && isMobile) from.y = effDistance;
+    if (direction === "right") from.x = isMobile ? 0 : effDistance;
+    if (direction === "right" && isMobile) from.y = effDistance;
+    if (direction === "scale") from.scale = 0.96;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -40,13 +45,14 @@ export default function Reveal({
           y: 0,
           x: 0,
           scale: 1,
-          duration: 0.9,
+          duration: 0.8,
           delay,
-          ease: "power3.out",
+          ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none reverse",
+            start: "top 92%",
+            toggleActions: "play none none none",
+            once: true,
           },
         }
       );

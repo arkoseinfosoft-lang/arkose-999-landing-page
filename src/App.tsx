@@ -20,7 +20,7 @@ export default function App() {
     <SmoothScroll>
       <div className="paper-texture" />
       <div className="paper-glow" />
-      <div className="relative z-[1] pb-16 sm:pb-0">
+      <div className="relative z-[1] w-full max-w-[100vw] overflow-x-hidden pb-20 sm:pb-0">
         <Ticker />
         <Nav />
         <main>

@@ -24,15 +24,15 @@ export default function WhyUs() {
             return (
               <Reveal
                 key={w.title}
-                direction="left"
-                delay={i * 0.1}
-                className="grid grid-cols-[36px_1fr] items-center gap-5 border-b border-paper-line py-6 sm:grid-cols-[44px_200px_1fr]"
+                direction="up"
+                delay={i * 0.08}
+                className="grid grid-cols-[32px_1fr] items-center gap-3.5 border-b border-paper-line py-5 sm:grid-cols-[44px_200px_1fr] sm:gap-5 sm:py-6"
               >
-                <Icon className="h-6 w-6 text-gold-deep" strokeWidth={1.6} />
-                <h3 className="font-serif-hi text-[17px] font-bold text-ink sm:col-auto">
+                <Icon className="h-5 w-5 text-gold-deep sm:h-6 sm:w-6" strokeWidth={1.6} />
+                <h3 className="font-serif-hi text-base font-bold text-ink sm:col-auto sm:text-[17px]">
                   {w.title}
                 </h3>
-                <p className="col-span-2 text-[13.7px] leading-relaxed text-muted sm:col-span-1">
+                <p className="col-span-2 text-[13px] leading-relaxed text-muted sm:col-span-1 sm:text-[13.7px]">
                   {w.body}
                 </p>
               </Reveal>
