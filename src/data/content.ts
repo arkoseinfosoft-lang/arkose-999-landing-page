@@ -210,7 +210,7 @@ export const pricingPlans = [
     desc: "आपके बिज़नेस के लिए सुंदर, सुपर-फ़ास्ट और मोबाइल-फ्रेंडली सिंगल-पेज वेबसाइट",
     now: "₹999",
     was: "₹8,999",
-    discount: "80% OFF",
+    discount: "90% OFF",
     unit: "वन-टाइम फिक्स फीस · कोई छुपा चार्ज नहीं",
     features: [
       "Responsive Premium Layout (मोबाइल + कंप्यूटर)",

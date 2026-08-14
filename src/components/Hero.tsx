@@ -48,7 +48,7 @@ export default function Hero() {
                 ₹999
               </span>
               <span className="rounded-full bg-red px-2.5 py-0.5 text-[11px] font-bold text-white">
-                80% OFF
+                90% OFF
               </span>
               <span className="w-full text-[11px] font-semibold text-gold-deep">
                 एक बार में क्लियर · कोई सरप्राइज़ चार्ज नहीं
