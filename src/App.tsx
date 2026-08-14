@@ -14,6 +14,7 @@ import Bonus from "./components/Bonus";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import MobileBar from "./components/MobileBar";
+import SocialProofToast from "./components/SocialProofToast";
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
           </main>
           <Footer />
           <MobileBar />
+          <SocialProofToast />
         </div>
       </div>
     </SmoothScroll>
