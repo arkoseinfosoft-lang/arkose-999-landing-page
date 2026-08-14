@@ -32,10 +32,10 @@ export default function Footer() {
         </div>
         <div className="text-[12.5px]">
           Email:{" "}
-          <a href="mailto:hello@arkoseinfosoft.com" className="font-semibold text-red-deep">
-            hello@arkoseinfosoft.com
+          <a href="mailto:hello@arkoseinfosoft.in" className="font-semibold text-red-deep">
+            hello@arkoseinfosoft.in
           </a>
-          &nbsp;|&nbsp; Support: <span className="font-bold text-gold-deep">+91 90000 00000</span>
+          &nbsp;|&nbsp; Support: <span className="font-bold text-gold-deep">+91 98395 91207</span>
         </div>
         <div className="mt-4 text-[11px] opacity-75">
           Safe &amp; Secure Consultation · No Risk Guarantee · Independent Digital Agency
