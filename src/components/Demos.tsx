@@ -84,15 +84,6 @@ export default function Demos() {
             <span className="animate-[bounceRight_1.4s_infinite_ease-in-out]">→</span>
           </div>
         </Reveal>
-
-        <Reveal
-          direction="up"
-          className="mt-8 border border-dashed border-gold-deep bg-gold-tint px-6 py-4 text-center text-[13.6px] leading-relaxed text-ink"
-        >
-          <b className="text-red-deep">आपका बिज़नेस लिस्ट में नहीं है?</b> कोई बात
-          नहीं — हर तरह के बिज़नेस के लिए कस्टमाइज़्ड डिज़ाइन उपलब्ध हैं।{" "}
-          WhatsApp पर मैसेज करें, तुरंत भेजेंगे।
-        </Reveal>
       </div>
     </section>
   );

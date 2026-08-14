@@ -2,11 +2,8 @@ import { MapPin, ShieldCheck, Mail, PhoneCall } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const links = [
-  { label: "About Us", href: "#" },
   { label: "Privacy Policy", href: "#" },
   { label: "Terms & Conditions", href: "#" },
-  { label: "Disclaimer", href: "#" },
-  { label: "Contact Us", href: "#" },
 ];
 
 const indianStates = [
@@ -56,7 +53,7 @@ export default function Footer() {
         <img
           src={logo}
           alt="Arkose Infosoft"
-          className="mx-auto mb-5 h-16 max-w-[280px] object-contain drop-shadow-xs"
+          className="mx-auto mb-6 h-28 sm:h-32 max-w-[480px] object-contain drop-shadow-sm"
         />
 
         {/* States of India Section (SEO & National Reach) */}

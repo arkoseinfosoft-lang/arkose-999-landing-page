@@ -35,7 +35,7 @@ export default function Nav() {
             src={logo}
             alt="Arkose Infosoft"
             className={`w-auto object-contain drop-shadow-sm transition-all duration-300 ${
-              scrolled ? "h-11" : "h-14"
+              scrolled ? "h-16 sm:h-20" : "h-20 sm:h-28"
             }`}
           />
         </a>
