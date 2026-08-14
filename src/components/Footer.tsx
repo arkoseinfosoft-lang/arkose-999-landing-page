@@ -53,7 +53,7 @@ export default function Footer() {
         <img
           src={logo}
           alt="Arkose Infosoft"
-          className="mx-auto mb-6 h-28 sm:h-32 max-w-[480px] object-contain drop-shadow-sm"
+          className="mx-auto mb-6 h-20 sm:h-24 max-w-[360px] object-contain drop-shadow-sm"
         />
 
         {/* States of India Section (SEO & National Reach) */}

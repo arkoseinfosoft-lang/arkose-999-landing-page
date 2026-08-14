@@ -1,42 +1,16 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import logo from "../assets/logo.png";
 import { whatsappLink } from "../data/content";
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`sticky top-[43px] sm:top-[47px] z-[60] border-b transition-all duration-300 ${
-        scrolled
-          ? "border-paper-line bg-paper/95 backdrop-blur-md shadow-[0_4px_20px_rgba(140,32,21,0.06)]"
-          : "border-transparent bg-paper/80 backdrop-blur-sm"
-      }`}
-    >
-      <div
-        className={`mx-auto flex max-w-[1120px] items-center justify-between px-4 transition-all duration-300 ${
-          scrolled ? "py-2" : "py-3"
-        }`}
-      >
+    <nav className="relative z-[50] w-full border-b border-paper-line/50 bg-paper/90 transition-colors duration-300">
+      <div className="mx-auto flex max-w-[1120px] items-center justify-between px-4 py-3 sm:py-3.5">
         <a href="#" className="flex items-center gap-2.5">
           <img
             src={logo}
             alt="Arkose Infosoft"
-            className={`w-auto object-contain drop-shadow-sm transition-all duration-300 ${
-              scrolled ? "h-16 sm:h-20" : "h-20 sm:h-28"
-            }`}
+            className="h-14 w-auto object-contain drop-shadow-sm transition-all duration-300 sm:h-16"
           />
         </a>
         <a
@@ -50,6 +24,6 @@ export default function Nav() {
           <span className="sm:hidden">WhatsApp</span>
         </a>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

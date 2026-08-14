@@ -22,22 +22,24 @@ export default function App() {
       <div className="paper-glow" />
       <div className="relative z-[1] w-full max-w-[100vw] overflow-x-hidden pb-20 sm:pb-0">
         <Ticker />
-        <Nav />
-        <main>
-          <Hero />
-          <SocialProof />
-          <StatStrip />
-          <Ledger />
-          <Problems />
-          <WhyUs />
-          <Demos />
-          <Pricing />
-          <Steps />
-          <Bonus />
-          <FAQ />
-        </main>
-        <Footer />
-        <MobileBar />
+        <div className="pt-[42px] sm:pt-[46px]">
+          <Nav />
+          <main>
+            <Hero />
+            <SocialProof />
+            <StatStrip />
+            <Ledger />
+            <Problems />
+            <WhyUs />
+            <Demos />
+            <Pricing />
+            <Steps />
+            <Bonus />
+            <FAQ />
+          </main>
+          <Footer />
+          <MobileBar />
+        </div>
       </div>
     </SmoothScroll>
   );

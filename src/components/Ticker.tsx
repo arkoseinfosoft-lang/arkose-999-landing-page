@@ -34,7 +34,7 @@ export default function Ticker() {
 
   return (
     <div
-      className="sticky top-0 z-[70] w-full border-b border-gold/35 bg-[#16120e] py-2.5 sm:py-3 text-white shadow-[0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-md"
+      className="fixed top-0 inset-x-0 z-[70] w-full border-b border-gold/35 bg-[#16120e] py-2.5 sm:py-3 text-white shadow-[0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-md"
       aria-label="Limited Time Offer Banner"
     >
       <div className="mx-auto flex max-w-[1120px] items-center justify-between gap-3 px-4">
