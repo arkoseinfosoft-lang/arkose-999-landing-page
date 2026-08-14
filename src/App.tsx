@@ -7,6 +7,7 @@ import StatStrip from "./components/StatStrip";
 import Ledger from "./components/Ledger";
 import Problems from "./components/Problems";
 import WhyUs from "./components/WhyUs";
+import Industries from "./components/Industries";
 import Demos from "./components/Demos";
 import Pricing from "./components/Pricing";
 import Steps from "./components/Steps";
@@ -31,6 +32,7 @@ export default function App() {
           <Ledger />
           <Problems />
           <WhyUs />
+          <Industries />
           <Demos />
           <Pricing />
           <Steps />

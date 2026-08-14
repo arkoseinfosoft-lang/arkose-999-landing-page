@@ -65,6 +65,129 @@ export const demos = [
   { cat: "Creative Studio", name: "Atelier Lumiere", desc: "क्रिएटिव आर्ट स्टूडियो, पोर्टफोलियो शोकेस और क्लाइंट प्रोजेक्ट गैलरी के साथ बेहतरीन वेबसाइट।", url: "https://atelier-lumiere-xi.vercel.app/" },
 ];
 
+export interface IndustryItem {
+  id: string;
+  name: string;
+  nameEn: string;
+  category: "all" | "services" | "retail" | "health" | "food" | "education";
+  iconName: string;
+  features: string[];
+  popular?: boolean;
+}
+
+export const industryCategories = [
+  { id: "health", label: "हेल्थ & ब्यूटी" },
+  { id: "food", label: "फूड & रेस्टोरेंट" },
+  { id: "retail", label: "दुकानें & रिटेल" },
+  { id: "education", label: "एजुकेशन & फिटनेस" },
+  { id: "services", label: "सर्विसेज़ & प्रोफेशनल्स" },
+  { id: "all", label: "सभी (All 12+)" },
+];
+
+export const industries: IndustryItem[] = [
+  {
+    id: "real-estate",
+    name: "प्रॉपर्टी & रियल एस्टेट",
+    nameEn: "Real Estate & Builders",
+    category: "services",
+    iconName: "Building2",
+    popular: true,
+    features: ["प्रॉपर्टी लिस्टिंग", "लोकेशन मैप", "WhatsApp लीड्स"],
+  },
+  {
+    id: "salons",
+    name: "सैलून, स्पा & ब्यूटी",
+    nameEn: "Salons & Spa",
+    category: "health",
+    iconName: "Scissors",
+    popular: true,
+    features: ["रेट लिस्ट मेन्यू", "अपॉइंटमेंट बुकिंग", "फोटो गैलरी"],
+  },
+  {
+    id: "doctors",
+    name: "डॉक्टर्स & क्लिनिक्स",
+    nameEn: "Doctors & Clinics",
+    category: "health",
+    iconName: "Stethoscope",
+    popular: true,
+    features: ["ओपीडी टाइमिंग्स", "डॉक्टर प्रोफाइल", "ऑनलाइन अपॉइंटमेंट"],
+  },
+  {
+    id: "restaurants",
+    name: "रेस्टोरेंट, कैफे & ढाबा",
+    nameEn: "Restaurants & Cafes",
+    category: "food",
+    iconName: "UtensilsCrossed",
+    popular: true,
+    features: ["डिजिटल मेन्यू कार्ड", "टेबल बुकिंग", "डायरेक्ट कॉल"],
+  },
+  {
+    id: "retail",
+    name: "दुकानें & शोरूम्स",
+    nameEn: "Retail Stores & Shops",
+    category: "retail",
+    iconName: "ShoppingBag",
+    features: ["प्रोडक्ट शोकेस", "ऑफर बैनर", "Google Maps"],
+  },
+  {
+    id: "coaching",
+    name: "कोचिंग & स्कूल",
+    nameEn: "Schools & Coaching",
+    category: "education",
+    iconName: "GraduationCap",
+    features: ["कोर्स डिटेल्स", "टॉपर्स रिजल्ट्स", "एडमिशन इन्क्वायरी"],
+  },
+  {
+    id: "lawyers",
+    name: "वकील & लीगल फर्म्स",
+    nameEn: "Lawyers & Legal",
+    category: "services",
+    iconName: "Scale",
+    features: ["केस कंसल्टेशन", "लीगल सर्विसेज़", "क्लाइंट फॉर्म"],
+  },
+  {
+    id: "travel",
+    name: "ट्रेवल & टूर एजेंसीज़",
+    nameEn: "Tours & Travel",
+    category: "services",
+    iconName: "Plane",
+    features: ["टूर पैकेजेस", "गाड़ी बुकिंग", "कस्टमर रिव्यू"],
+  },
+  {
+    id: "gyms",
+    name: "जिम & फिटनेस सेंटर",
+    nameEn: "Gyms & Fitness",
+    category: "education",
+    iconName: "Dumbbell",
+    popular: true,
+    features: ["मेंबरशिप प्लान्स", "ट्रेनर प्रोफाइल", "फ्री ट्रायल"],
+  },
+  {
+    id: "auto",
+    name: "कार शोरूम & गैरेज",
+    nameEn: "Auto & Mechanics",
+    category: "services",
+    iconName: "Car",
+    features: ["गाड़ी मॉडल्स", "सर्विस बुकिंग", "इमरजेंसी नंबर"],
+  },
+  {
+    id: "interior",
+    name: "इंटीरियर & फर्नीचर",
+    nameEn: "Interior & Decor",
+    category: "retail",
+    iconName: "Layers",
+    features: ["3D वर्क शोकेस", "मटेरियल डिटेल", "फ्री कोटेशन"],
+  },
+  {
+    id: "consultants",
+    name: "कंसल्टेंट्स & CA",
+    nameEn: "Consultants & CA",
+    category: "services",
+    iconName: "Briefcase",
+    features: ["सर्विस पैकेजेस", "क्लाइंट टेस्टिमोनियल", "कॉल शेड्यूलिंग"],
+  },
+];
+
 export const pricingPlans = [
   {
     flag: "स्पेशल लिमिटेड-टाइम ऑफर",
@@ -97,8 +220,20 @@ export const steps = [
 ];
 
 export const bonuses = [
-  { was: "₹2,500", title: "30 Social Media Post Designs", body: "Facebook और Instagram पर डेली पोस्टिंग के लिए 30 रेडी-मेड डिज़ाइन्स।" },
-  { was: "₹1,000", title: "Google Maps Ranking Guide", body: "अपने बिज़नेस को Google Maps पर #1 रैंक कराने की फ्री PDF गाइड।" },
+  {
+    id: "01",
+    tag: "30 READY POSTS",
+    was: "₹2,500",
+    title: "30 Social Media Post Designs",
+    body: "Facebook और Instagram पर डेली पोस्टिंग के लिए 30 रेडी-मेड प्रीमियम डिज़ाइन्स — सोशल मीडिया पर बिज़नेस की साख बनाएं।",
+  },
+  {
+    id: "02",
+    tag: "LOCAL SEO GUIDE",
+    was: "₹1,000",
+    title: "Google Maps Ranking Guide",
+    body: "अपने बिज़नेस को Google Maps पर #1 रैंक कराने की सीक्रेट स्टेप-बाय-स्टेप PDF गाइड — लोकल कस्टमर्स की बाढ़ लाएं।",
+  },
 ];
 
 export const faqs = [
