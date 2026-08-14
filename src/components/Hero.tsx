@@ -160,13 +160,37 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.7, duration: 0.5 }}
-                  className="max-w-[85%] self-end overflow-hidden rounded-[9px] rounded-tr-[2px] bg-white shadow-sm border border-paper-line"
+                  className="w-[90%] max-w-[245px] self-end overflow-hidden rounded-[10px] rounded-tr-[2px] border border-paper-line bg-card p-1.5 shadow-md"
                 >
-                  <div className="flex h-[55px] items-end bg-gradient-to-br from-gold to-red p-2 sm:h-[65px]">
-                    <b className="font-serif-hi text-xs text-white">
-                      Fitness &amp; Gym Club
-                    </b>
-                  </div>
+                  <a
+                    href="https://fiitness-gym.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block h-[115px] w-full overflow-hidden rounded-[7px] bg-slate-900 shadow-inner"
+                  >
+                    <iframe
+                      src="https://fiitness-gym.vercel.app/"
+                      title="Fitness & Gym Club Live Website"
+                      scrolling="no"
+                      loading="lazy"
+                      style={{
+                        width: "200%",
+                        height: "200%",
+                        transform: "scale(0.5)",
+                        transformOrigin: "top left",
+                        border: "none",
+                        pointerEvents: "none",
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/80 via-transparent to-transparent p-2">
+                      <span className="font-serif-hi text-[11px] font-bold text-white drop-shadow-sm">
+                        Fitness &amp; Gym Club
+                      </span>
+                      <span className="rounded bg-red/90 px-1.5 py-0.5 text-[9px] font-bold text-white">
+                        Live ↗
+                      </span>
+                    </div>
+                  </a>
                 </motion.div>
                 <Bubble delay={2.0} align="right" time="10:48 AM" ticks>
                   आपकी वेबसाइट लाइव है — देखिए और बताइए कैसी लगी
