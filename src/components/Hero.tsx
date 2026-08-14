@@ -42,7 +42,7 @@ export default function Hero() {
               className="mt-5 inline-flex flex-wrap items-baseline gap-2.5 rounded-xl border border-gold bg-gold-tint/70 px-4 py-2.5"
             >
               <span className="font-serif-hi text-[13px] font-semibold text-muted line-through decoration-red/60">
-                ₹4,999
+                ₹8,999
               </span>
               <span className="price-pulse font-serif-hi text-[38px] font-bold leading-none text-red-deep sm:text-[44px]">
                 ₹999
@@ -109,7 +109,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-[360px] py-8 md:py-0"
+            className="relative mx-auto hidden w-full max-w-[360px] md:block"
           >
             {/* trust badge */}
             <div className="absolute -top-3 inset-x-0 mx-auto z-20 flex justify-center md:inset-auto md:left-[-20px] md:top-[-16px] lg:left-[-28px] lg:top-[-20px]">
@@ -249,11 +249,10 @@ function Bubble({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}
-      className={`max-w-[82%] rounded-[9px] px-3 pb-2 pt-2.5 text-[13.3px] leading-[1.55] shadow-sm ${
-        align === "left"
+      className={`max-w-[82%] rounded-[9px] px-3 pb-2 pt-2.5 text-[13.3px] leading-[1.55] shadow-sm ${align === "left"
           ? "self-start rounded-tl-[2px] bg-white text-ink"
           : "self-end rounded-tr-[2px] bg-[#e8f5df] text-[#1c3b12]"
-      }`}
+        }`}
     >
       {children}
       <span className="mt-1 block text-right text-[10px] text-[#8a8270]">

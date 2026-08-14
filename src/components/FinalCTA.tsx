@@ -2,18 +2,34 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { whatsappLink } from "../data/content";
+import { sanitizeInput, validatePhone, safeOpenUrl } from "../lib/sanitize";
 
 export default function FinalCTA() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [type, setType] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
-    const message = `Hi, mera naam ${name} hai. Mujhe apne ${
-      type || "business"
-    } ke liye ₹999 website chahiye. Mera number: ${phone}`;
-    window.open(whatsappLink(message), "_blank");
+    setError(null);
+
+    const cleanName = sanitizeInput(name, 60);
+    const cleanType = sanitizeInput(type, 60) || "business";
+    const phoneCheck = validatePhone(phone);
+
+    if (!cleanName || cleanName.length < 2) {
+      setError("कृपया अपना सही नाम दर्ज करें (कम से कम 2 अक्षर)।");
+      return;
+    }
+
+    if (!phoneCheck.isValid) {
+      setError("कृपया 10 अंकों का मान्य WhatsApp मोबाइल नंबर दर्ज करें।");
+      return;
+    }
+
+    const message = `Hi, mera naam ${cleanName} hai. Mujhe apne ${cleanType} ke liye ₹999 website chahiye. Mera number: ${phoneCheck.cleaned}`;
+    safeOpenUrl(whatsappLink(message));
   };
 
   return (
@@ -39,6 +55,14 @@ export default function FinalCTA() {
             className="border border-paper-line bg-card p-5 shadow-[0_20px_44px_rgba(140,32,21,0.08)] sm:p-7"
           >
             <form onSubmit={submit}>
+              {error && (
+                <div
+                  role="alert"
+                  className="mb-4 rounded border border-red/40 bg-red-tint p-2.5 text-xs font-bold text-red-deep"
+                >
+                  {error}
+                </div>
+              )}
               <label htmlFor="bname" className="mb-1.5 block font-serif-hi text-xs font-bold tracking-wide text-red-deep">
                 आपका नाम
               </label>
@@ -46,6 +70,7 @@ export default function FinalCTA() {
                 id="bname"
                 type="text"
                 required
+                maxLength={60}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="जैसे — राहुल शर्मा"
@@ -58,6 +83,7 @@ export default function FinalCTA() {
                 id="bphone"
                 type="tel"
                 required
+                maxLength={15}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="10 अंकों का मोबाइल नंबर"
@@ -69,6 +95,7 @@ export default function FinalCTA() {
               <input
                 id="btype"
                 type="text"
+                maxLength={60}
                 value={type}
                 onChange={(e) => setType(e.target.value)}
                 placeholder="जैसे — सैलून, जिम, रियल एस्टेट..."

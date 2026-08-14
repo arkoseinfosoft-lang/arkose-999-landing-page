@@ -19,7 +19,7 @@ export default function Nav() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`sticky top-0 z-[60] border-b transition-all duration-300 ${
+      className={`sticky top-[43px] sm:top-[47px] z-[60] border-b transition-all duration-300 ${
         scrolled
           ? "border-paper-line bg-paper/95 backdrop-blur-md shadow-[0_4px_20px_rgba(140,32,21,0.06)]"
           : "border-transparent bg-paper/80 backdrop-blur-sm"

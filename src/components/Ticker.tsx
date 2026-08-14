@@ -34,21 +34,29 @@ export default function Ticker() {
 
   return (
     <div
-      className="relative z-[70] border-b border-gold/25 bg-[#16120e] py-2 text-white"
+      className="sticky top-0 z-[70] w-full border-b border-gold/35 bg-[#16120e] py-2.5 sm:py-3 text-white shadow-[0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-md"
       aria-label="Limited Time Offer Banner"
     >
       <div className="mx-auto flex max-w-[1120px] items-center justify-between gap-3 px-4">
-        <div className="flex items-center gap-2 text-[13px] font-semibold">
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+        {/* Left message with live pulse indicator */}
+        <div className="flex items-center gap-2 text-[13px] font-semibold sm:text-[14px]">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
           </span>
-          <span className="hidden sm:inline">
-            स्पेशल ऑफर — इस हफ्ते ₹999 वेबसाइट के लिए केवल कुछ ही स्लॉट बाकी हैं
+          <span className="hidden md:inline">
+            ⚡ <span className="font-bold text-yellow-400">स्पेशल ऑफर:</span> इस हफ्ते ₹999 वेबसाइट के लिए केवल कुछ ही स्लॉट बाकी हैं!
           </span>
-          <span className="sm:hidden">स्पेशल लॉन्च ऑफर</span>
+          <span className="hidden sm:inline md:hidden">
+            ⚡ <span className="font-bold text-yellow-400">स्पेशल ऑफर:</span> ₹999 में सीमित स्लॉट बाकी हैं
+          </span>
+          <span className="text-[12.5px] font-bold sm:hidden">
+            🔥 <span className="text-yellow-400">₹999 ऑफर:</span> सीमित स्लॉट
+          </span>
         </div>
-        <div className="flex items-center gap-1.5 font-mono">
+
+        {/* Right Countdown Timer */}
+        <div className="flex shrink-0 items-center gap-1.5 font-mono sm:gap-2">
           {[
             { v: left.h, l: "घं" },
             { v: left.m, l: "मि" },
@@ -56,10 +64,14 @@ export default function Ticker() {
           ].map((t) => (
             <div
               key={t.l}
-              className="flex items-center gap-1 rounded border border-gold/30 bg-[#262019] px-1.5 py-0.5"
+              className="flex items-center gap-1 rounded-md border border-gold/40 bg-[#262019] px-2 py-1 shadow-xs"
             >
-              <span className="text-[13px] font-bold text-white">{t.v}</span>
-              <small className="text-[10px] font-semibold text-gold">{t.l}</small>
+              <span className="text-[13px] font-bold tracking-wider text-white leading-none sm:text-[14px]">
+                {t.v}
+              </span>
+              <small className="text-[10px] font-bold text-gold sm:text-[10.5px]">
+                {t.l}
+              </small>
             </div>
           ))}
         </div>

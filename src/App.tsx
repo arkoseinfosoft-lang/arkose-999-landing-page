@@ -7,13 +7,11 @@ import StatStrip from "./components/StatStrip";
 import Ledger from "./components/Ledger";
 import Problems from "./components/Problems";
 import WhyUs from "./components/WhyUs";
-import Industries from "./components/Industries";
 import Demos from "./components/Demos";
 import Pricing from "./components/Pricing";
 import Steps from "./components/Steps";
 import Bonus from "./components/Bonus";
 import FAQ from "./components/FAQ";
-import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 import MobileBar from "./components/MobileBar";
 
@@ -32,13 +30,11 @@ export default function App() {
           <Ledger />
           <Problems />
           <WhyUs />
-          <Industries />
           <Demos />
           <Pricing />
           <Steps />
           <Bonus />
           <FAQ />
-          <FinalCTA />
         </main>
         <Footer />
         <MobileBar />

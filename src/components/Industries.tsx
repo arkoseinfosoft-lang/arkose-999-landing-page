@@ -26,6 +26,7 @@ import {
   whatsappLink,
   type IndustryItem,
 } from "../data/content";
+import { sanitizeInput, safeOpenUrl } from "../lib/sanitize";
 
 const iconMap: Record<string, React.ReactNode> = {
   Building2: <Building2 className="h-5 w-5" />,
@@ -53,11 +54,11 @@ export default function Industries() {
 
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const query = customBiz.trim() || "mere business";
+    const query = sanitizeInput(customBiz, 60) || "mere business";
     const link = whatsappLink(
       `Hi, mera business "${query}" ka hai. Mujhe ₹999 me website banwani hai, kripya demo dikhayein.`
     );
-    window.open(link, "_blank");
+    safeOpenUrl(link);
   };
 
   return (

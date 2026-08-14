@@ -1,6 +1,21 @@
-export const WHATSAPP_NUMBER = "919839591207";
-export const whatsappLink = (text: string) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+import { sanitizeInput } from "../lib/sanitize";
+
+export const WHATSAPP_NUMBER =
+  (import.meta.env?.VITE_WHATSAPP_NUMBER as string) || "919839591207";
+
+
+
+
+export const CONTACT_EMAIL =
+  (import.meta.env?.VITE_CONTACT_EMAIL as string) || "hello@arkoseinfosoft.in";
+
+export const SUPPORT_PHONE =
+  (import.meta.env?.VITE_SUPPORT_PHONE as string) || "+91 98395 91207";
+
+export const whatsappLink = (text: string) => {
+  const clean = sanitizeInput(text, 500);
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(clean)}`;
+};
 
 export const stats = [
   { value: "320+", label: "प्रीमियम वेबसाइट्स डिलीवर कीं" },
@@ -195,7 +210,7 @@ export const pricingPlans = [
     title: "Premium Business Website",
     desc: "आपके बिज़नेस के लिए सुंदर, सुपर-फ़ास्ट और मोबाइल-फ्रेंडली सिंगल-पेज वेबसाइट",
     now: "₹999",
-    was: "₹4,999",
+    was: "₹8,999",
     discount: "80% OFF",
     unit: "वन-टाइम फिक्स फीस · कोई छुपा चार्ज नहीं",
     features: [
