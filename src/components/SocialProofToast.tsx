@@ -157,7 +157,7 @@ export default function SocialProofToast() {
 
   return (
     <div
-      className="pointer-events-none fixed bottom-[88px] left-3 z-[80] sm:bottom-5 sm:left-5"
+      className="pointer-events-none fixed top-[48px] inset-x-3 z-[80] flex justify-center sm:top-auto sm:bottom-6 sm:left-6 sm:right-auto sm:justify-start"
       aria-live="polite"
       aria-atomic="true"
     >
@@ -165,11 +165,11 @@ export default function SocialProofToast() {
         {visible && current && (
           <motion.div
             key={current.id}
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            initial={{ opacity: 0, y: -16, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="pointer-events-auto relative flex w-[calc(100vw-24px)] max-w-[330px] items-start gap-3 rounded-xl border border-paper-line bg-card/96 p-3 shadow-[0_12px_32px_rgba(140,32,21,0.14)] backdrop-blur-md sm:max-w-[350px] sm:p-3.5"
+            className="pointer-events-auto relative flex w-full max-w-[315px] items-start gap-2.5 rounded-xl border border-paper-line bg-card/98 p-2.5 shadow-[0_16px_40px_rgba(140,32,21,0.2)] ring-1 ring-gold/25 backdrop-blur-xl sm:max-w-[340px] sm:p-3 sm:gap-3"
           >
             {/* Top decorative gradient line */}
             <div className="absolute inset-x-0 top-0 h-[2.5px] rounded-t-xl bg-gradient-to-r from-red-deep via-gold to-gold-deep" />
@@ -177,25 +177,25 @@ export default function SocialProofToast() {
             {/* Avatar with live pulse badge */}
             <div className="relative shrink-0 pt-0.5">
               <div
-                className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${current.avatarBg} font-serif-hi text-xs font-bold text-white shadow-xs`}
+                className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${current.avatarBg} font-serif-hi text-[11px] font-bold text-white shadow-xs sm:h-10 sm:w-10 sm:text-xs`}
               >
                 {current.initials}
               </div>
-              <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-card">
-                <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+              <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-card sm:h-3 sm:w-3">
+                <span className="h-1 w-1 rounded-full bg-white animate-pulse" />
               </span>
             </div>
 
             {/* Content Body */}
-            <div className="min-w-0 flex-1 pr-4">
-              <div className="text-[13px] font-bold leading-tight text-ink">
+            <div className="min-w-0 flex-1 pr-3.5">
+              <div className="text-[12.5px] font-bold leading-tight text-ink sm:text-[13px]">
                 <span>{current.name}</span>{" "}
                 <span className="font-semibold text-muted">({current.city})</span>
               </div>
-              <p className="mt-0.5 text-[12px] font-semibold text-red-deep leading-snug">
+              <p className="mt-0.5 text-[11.5px] font-semibold text-red-deep leading-snug sm:text-[12px]">
                 {current.action}
               </p>
-              <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[10.5px] text-muted">
+              <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[10px] text-muted sm:text-[10.5px]">
                 <span className="inline-flex items-center gap-0.5 font-bold text-emerald-700">
                   <CheckCircle2 className="h-3 w-3" />
                   <span>Verified Client</span>
@@ -208,7 +208,7 @@ export default function SocialProofToast() {
             {/* Close (X) Button */}
             <button
               onClick={handleManualClose}
-              className="absolute right-2 top-2 rounded-md p-1 text-muted/70 transition-colors hover:bg-paper-2 hover:text-ink focus:outline-hidden"
+              className="absolute right-1.5 top-1.5 rounded-md p-1 text-muted/70 transition-colors hover:bg-paper-2 hover:text-ink focus:outline-hidden"
               aria-label="Close notification"
             >
               <X className="h-3.5 w-3.5" />
