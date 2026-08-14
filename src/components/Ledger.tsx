@@ -10,7 +10,7 @@ export default function Ledger() {
         <SectionHead
           ornament
           center
-          eyebrow="पूरी जानकारी, पढ़ने के बाद ही फॉर्म भरें"
+          eyebrow="पूरी जानकारी पढ़ें, फिर तय करें"
           title={
             <>
               ₹999 में आपको <em className="not-italic text-red">असल में</em> क्या मिलता है

@@ -99,7 +99,7 @@ export default function Pricing() {
               </div>
               <div className="flex items-center gap-1.5 text-[11px] font-bold text-ink sm:gap-2 sm:text-[12.5px]">
                 <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-gold-deep sm:h-4 sm:w-4" />
-                <span>0% एडवांस फीस</span>
+                <span>₹399 एडवांस फीस</span>
               </div>
               <div className="flex items-center gap-1.5 text-[11px] font-bold text-ink sm:gap-2 sm:text-[12.5px]">
                 <Check className="h-3.5 w-3.5 shrink-0 text-gold-deep sm:h-4 sm:w-4" />
@@ -163,7 +163,7 @@ export default function Pricing() {
             </motion.a>
 
             <p className="mt-3.5 text-center text-[12px] text-muted">
-              🔒 कोई एडवांस पेमेंट नहीं · 100% रिस्क-फ्री · पसंद आने पर ही भुगतान करें
+              100% रिस्क-फ्री · पसंद आने पर ही भुगतान करें
             </p>
           </Reveal>
         </div>
