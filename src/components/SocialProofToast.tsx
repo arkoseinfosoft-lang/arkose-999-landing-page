@@ -157,7 +157,7 @@ export default function SocialProofToast() {
 
   return (
     <div
-      className="pointer-events-none fixed top-[48px] inset-x-3 z-[80] flex justify-center sm:top-auto sm:bottom-6 sm:left-6 sm:right-auto sm:justify-start"
+      className="pointer-events-none fixed bottom-[108px] left-3.5 right-3.5 z-[990] flex justify-center sm:bottom-6 sm:left-6 sm:right-auto sm:justify-start"
       aria-live="polite"
       aria-atomic="true"
     >
@@ -165,11 +165,11 @@ export default function SocialProofToast() {
         {visible && current && (
           <motion.div
             key={current.id}
-            initial={{ opacity: 0, y: -16, scale: 0.96 }}
+            initial={{ opacity: 0, y: 24, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            exit={{ opacity: 0, y: 16, scale: 0.95 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="pointer-events-auto relative flex w-full max-w-[315px] items-start gap-2.5 rounded-xl border border-paper-line bg-card/98 p-2.5 shadow-[0_16px_40px_rgba(140,32,21,0.2)] ring-1 ring-gold/25 backdrop-blur-xl sm:max-w-[340px] sm:p-3 sm:gap-3"
+            className="pointer-events-auto relative flex w-full max-w-[325px] items-start gap-2.5 rounded-xl border border-paper-line bg-card/98 p-2.5 shadow-[0_16px_40px_rgba(140,32,21,0.2)] ring-1 ring-gold/25 backdrop-blur-xl sm:max-w-[340px] sm:p-3 sm:gap-3"
           >
             {/* Top decorative gradient line */}
             <div className="absolute inset-x-0 top-0 h-[2.5px] rounded-t-xl bg-gradient-to-r from-red-deep via-gold to-gold-deep" />

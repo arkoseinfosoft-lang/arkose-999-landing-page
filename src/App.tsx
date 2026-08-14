@@ -40,9 +40,9 @@ export default function App() {
           </main>
           <Footer />
           <MobileBar />
-          <SocialProofToast />
         </div>
       </div>
+      <SocialProofToast />
     </SmoothScroll>
   );
 }
