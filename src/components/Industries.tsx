@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2,
   Scissors,
@@ -95,82 +94,72 @@ export default function Industries() {
         </Reveal>
 
         {/* Dynamic Industries Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredIndustries.map((ind: IndustryItem) => (
-              <motion.div
-                key={ind.id}
-                layout
-                initial={{ opacity: 0, scale: 0.94, y: 15 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.94, y: 15 }}
-                transition={{ duration: 0.25 }}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-paper-line bg-card p-4.5 shadow-[0_4px_16px_rgba(140,32,21,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_14px_30px_rgba(140,32,21,0.09)] sm:p-5"
-              >
-                {/* Top Subtle Shimmer Accent */}
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-deep via-gold to-gold-deep opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
+          {filteredIndustries.map((ind: IndustryItem) => (
+            <div
+              key={ind.id}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-paper-line bg-card p-4.5 shadow-[0_4px_16px_rgba(140,32,21,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_14px_30px_rgba(140,32,21,0.09)] sm:p-5"
+            >
+              {/* Top Subtle Shimmer Accent */}
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-deep via-gold to-gold-deep opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div>
-                  {/* Card Header: Icon & Badge */}
-                  <div className="mb-3.5 flex items-center justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold/30 bg-gold-tint text-red-deep shadow-xs transition-all duration-300 group-hover:rotate-3 group-hover:scale-105 group-hover:bg-red-deep group-hover:text-white">
-                      {iconMap[ind.iconName] || <Sparkles className="h-5 w-5" />}
-                    </div>
-
-                    {ind.popular ? (
-                      <span className="inline-flex items-center gap-1 rounded-full border border-red/20 bg-red-tint px-2.5 py-0.5 text-[10px] font-extrabold tracking-wider text-red-deep uppercase">
-                        <span>🔥</span> Popular
-                      </span>
-                    ) : (
-                      <span className="rounded-full border border-paper-line bg-paper px-2 py-0.5 text-[10px] font-bold text-muted uppercase">
-                        Ready Demo
-                      </span>
-                    )}
+              <div>
+                {/* Card Header: Icon & Badge */}
+                <div className="mb-3.5 flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold/30 bg-gold-tint text-red-deep shadow-xs transition-all duration-300 group-hover:rotate-3 group-hover:scale-105 group-hover:bg-red-deep group-hover:text-white">
+                    {iconMap[ind.iconName] || <Sparkles className="h-5 w-5" />}
                   </div>
 
-                  {/* Title & Category */}
-                  <h3 className="font-serif-hi text-[16.5px] font-bold text-ink transition-colors group-hover:text-red-deep sm:text-[17.5px]">
-                    {ind.name}
-                  </h3>
-                  <p className="mb-3 text-[12px] font-medium text-muted">
-                    {ind.nameEn}
-                  </p>
-
-                  {/* Key Feature Micro-Pills */}
-                  <div className="mb-4 flex flex-wrap gap-1.5">
-                    {ind.features.map((feat) => (
-                      <span
-                        key={feat}
-                        className="inline-flex items-center gap-1 rounded-md border border-paper-line bg-paper-2/60 px-2 py-0.5 text-[11px] font-semibold text-ink/80 transition-colors group-hover:border-gold/40 group-hover:bg-gold-tint/40"
-                      >
-                        <Check className="h-3 w-3 text-gold-deep" />
-                        <span>{feat}</span>
-                      </span>
-                    ))}
-                  </div>
+                  {ind.popular ? (
+                    <span className="inline-flex items-center gap-1 rounded-full border border-red/20 bg-red-tint px-2.5 py-0.5 text-[10px] font-extrabold tracking-wider text-red-deep uppercase">
+                      <span>🔥</span> Popular
+                    </span>
+                  ) : (
+                    <span className="rounded-full border border-paper-line bg-paper px-2 py-0.5 text-[10px] font-bold text-muted uppercase">
+                      Ready Demo
+                    </span>
+                  )}
                 </div>
 
-                {/* Bottom Action Link */}
-                <div className="pt-2">
-                  <a
-                    href={whatsappLink(
-                      `Hi, mujhe apne business (${ind.nameEn} - ${ind.name}) ke liye ₹999 website chahiye. Demo dikhayein.`
-                    )}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex w-full items-center justify-between rounded-lg border border-gold/30 bg-gold-tint/40 px-3 py-2 text-[12.5px] font-bold text-red-deep transition-all duration-200 hover:border-gold hover:bg-gold-tint"
-                  >
-                    <span>इस इंडस्ट्री का डेमो बनवाएं</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </a>
+                {/* Title & Category */}
+                <h3 className="font-serif-hi text-[16.5px] font-bold text-ink transition-colors group-hover:text-red-deep sm:text-[17.5px]">
+                  {ind.name}
+                </h3>
+                <p className="mb-3 text-[12px] font-medium text-muted">
+                  {ind.nameEn}
+                </p>
+
+                {/* Key Feature Micro-Pills */}
+                <div className="mb-4 flex flex-wrap gap-1.5">
+                  {ind.features.map((feat) => (
+                    <span
+                      key={feat}
+                      className="inline-flex items-center gap-1 rounded-md border border-paper-line bg-paper-2/60 px-2 py-0.5 text-[11px] font-semibold text-ink/80 transition-colors group-hover:border-gold/40 group-hover:bg-gold-tint/40"
+                    >
+                      <Check className="h-3 w-3 text-gold-deep" />
+                      <span>{feat}</span>
+                    </span>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+
+              {/* Bottom Action Link */}
+              <div className="pt-2">
+                <a
+                  href={whatsappLink(
+                    `Hi, mujhe apne business (${ind.nameEn} - ${ind.name}) ke liye ₹999 website chahiye. Demo dikhayein.`
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex w-full items-center justify-between rounded-lg border border-gold/30 bg-gold-tint/40 px-3 py-2 text-[12.5px] font-bold text-red-deep transition-all duration-200 hover:border-gold hover:bg-gold-tint"
+                >
+                  <span>इस इंडस्ट्री का डेमो बनवाएं</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
 
         {/* Interactive "Don't see your industry?" Search Box */}
         <Reveal direction="up" className="mt-8 sm:mt-10">

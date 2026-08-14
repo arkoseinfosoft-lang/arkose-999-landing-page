@@ -1,16 +1,13 @@
-import { useEffect, useRef, type ReactNode } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-type Direction = "up" | "left" | "right" | "scale";
+type Direction = "up" | "left" | "right" | "scale" | "none";
 
 export default function Reveal({
   children,
   direction = "up",
   delay = 0,
-  distance = 40,
+  distance = 30,
   className = "",
 }: {
   children: ReactNode;
@@ -19,51 +16,40 @@ export default function Reveal({
   distance?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const prefersReduced = useReducedMotion();
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+  if (prefersReduced) {
+    return <div className={className}>{children}</div>;
+  }
 
-    const isMobile = window.innerWidth < 768;
-    const effDistance = isMobile ? Math.min(distance, 20) : distance;
-
-    const from: gsap.TweenVars = { opacity: 0 };
-    if (direction === "up") from.y = effDistance;
-    if (direction === "left") from.x = isMobile ? 0 : -effDistance;
-    if (direction === "left" && isMobile) from.y = effDistance;
-    if (direction === "right") from.x = isMobile ? 0 : effDistance;
-    if (direction === "right" && isMobile) from.y = effDistance;
-    if (direction === "scale") from.scale = 0.96;
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el,
-        from,
-        {
-          opacity: 1,
-          y: 0,
-          x: 0,
-          scale: 1,
-          duration: 0.8,
-          delay,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 92%",
-            toggleActions: "play none none none",
-            once: true,
-          },
-        }
-      );
-    }, ref);
-
-    return () => ctx.revert();
-  }, [direction, delay, distance]);
+  const getInitial = () => {
+    switch (direction) {
+      case "up":
+        return { opacity: 0, y: distance };
+      case "left":
+        return { opacity: 0, x: -distance };
+      case "right":
+        return { opacity: 0, x: distance };
+      case "scale":
+        return { opacity: 0, scale: 0.96 };
+      default:
+        return { opacity: 0 };
+    }
+  };
 
   return (
-    <div ref={ref} className={className}>
+    <motion.div
+      initial={getInitial()}
+      whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{
+        duration: 0.6,
+        delay,
+        ease: [0.25, 1, 0.5, 1],
+      }}
+      className={className}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }
