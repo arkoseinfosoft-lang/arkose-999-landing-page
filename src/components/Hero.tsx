@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import { ShieldCheck, Star, MessageCircle, ChevronDown, Lock, Users } from "lucide-react";
 import { whatsappLink } from "../data/content";
+import rahulAvatar from "../assets/rahul-sharma.jpg";
 
 const container: Variants = {
   hidden: {},
@@ -32,8 +33,8 @@ export default function Hero() {
               variants={item}
               className="font-serif-hi text-[clamp(28px,4.3vw,48px)] font-bold leading-[1.26] text-ink"
             >
-              कोई भी बिज़नेस हो, वेबसाइट अब सिर्फ़ {" "}
-              <em className="not-italic text-red">₹999</em> में तैयार
+              अपने बिज़नेस के लिए प्रोफेशनल वेबसाइट, {" "}
+              <em className="not-italic text-red">कम</em> कीमत में
             </motion.h1>
 
             {/* Price contrast block */}
@@ -133,14 +134,19 @@ export default function Hero() {
             {/* phone mockup */}
             <div className="mx-auto w-full max-w-[360px] rounded-[20px] border border-paper-line bg-card p-3 shadow-[0_24px_50px_rgba(140,32,21,0.1)] sm:p-3.5">
               <div className="mb-3 flex items-center gap-2.5 border-b border-paper-line pb-3 sm:mb-3.5 sm:pb-3.5">
-                <div className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-gradient-to-br from-gold to-red font-serif-hi text-xs font-bold text-white sm:h-[34px] sm:w-[34px] sm:text-sm">
-                  RS
-                </div>
+                <img
+                  src={rahulAvatar}
+                  alt="राहुल शर्मा"
+                  className="h-[36px] w-[36px] rounded-full object-cover ring-2 ring-gold/40 shadow-xs sm:h-[38px] sm:w-[38px]"
+                />
                 <div>
                   <div className="text-xs font-semibold text-ink sm:text-sm">
                     राहुल शर्मा · Fitness Club
                   </div>
-                  <div className="text-[10.5px] text-red sm:text-[11px]">Arkose Infosoft • online</div>
+                  <div className="flex items-center gap-1.5 text-[10.5px] font-medium text-emerald-600 sm:text-[11px]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    online
+                  </div>
                 </div>
               </div>
               <div className="flex min-h-[300px] flex-col gap-2 rounded-xl bg-[#f0ece0] p-2.5 sm:min-h-[320px] sm:gap-2.5 sm:p-3">
@@ -154,32 +160,32 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.7, duration: 0.5 }}
-                  className="max-w-[85%] self-start overflow-hidden rounded-[9px] rounded-tl-[2px] bg-white shadow-sm"
+                  className="max-w-[85%] self-end overflow-hidden rounded-[9px] rounded-tr-[2px] bg-white shadow-sm border border-paper-line"
                 >
-                  <div className="flex h-[60px] items-end bg-gradient-to-br from-gold to-red p-2 sm:h-[70px]">
+                  <div className="flex h-[55px] items-end bg-gradient-to-br from-gold to-red p-2 sm:h-[65px]">
                     <b className="font-serif-hi text-xs text-white">
                       Fitness &amp; Gym Club
                     </b>
                   </div>
-                  <div className="p-2 text-[11.5px] text-muted sm:p-2.5 sm:text-[12.5px]">
-                    आपकी वेबसाइट लाइव है — देखिए और बताइए कैसी लगी
-                  </div>
                 </motion.div>
-                <Bubble delay={2.1} align="left" time="10:52 AM">
+                <Bubble delay={2.0} align="right" time="10:48 AM" ticks>
+                  आपकी वेबसाइट लाइव है — देखिए और बताइए कैसी लगी
+                </Bubble>
+                <Bubble delay={2.4} align="left" time="10:52 AM">
                   वाह बहुत बढ़िया! पेमेंट कैसे करूं?
                 </Bubble>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 2.5 }}
-                  className="flex w-fit gap-1 self-start rounded-[9px] rounded-tl-[2px] bg-white px-3 py-2 sm:py-2.5"
+                  transition={{ delay: 2.8 }}
+                  className="flex w-fit gap-1 self-end rounded-[9px] rounded-tr-[2px] bg-[#e8f5df] px-3 py-2 sm:py-2.5"
                 >
                   {[0, 1, 2].map((i) => (
                     <motion.span
                       key={i}
                       animate={{ opacity: [0.3, 1, 0.3] }}
                       transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2 }}
-                      className="h-1.5 w-1.5 rounded-full bg-[#b7ae98]"
+                      className="h-1.5 w-1.5 rounded-full bg-[#82a975]"
                     />
                   ))}
                 </motion.div>
