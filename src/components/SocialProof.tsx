@@ -50,19 +50,9 @@ export default function SocialProof() {
           </p>
         </div>
 
-        {/* Divider pill */}
-        <div className="hidden h-8 w-px bg-paper-line sm:block" />
 
-        {/* Live indicator */}
-        <div className="flex items-center gap-1.5">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-          </span>
-          <span className="text-[12px] font-semibold text-muted">
-            अभी <b className="text-ink">7 लोग</b> यह पेज देख रहे हैं
-          </span>
-        </div>
+
+
       </div>
     </motion.div>
   );
