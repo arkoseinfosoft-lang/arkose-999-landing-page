@@ -55,7 +55,7 @@ export default function Pricing() {
           >
             {/* Top decorative badge */}
             <div className="absolute right-0 top-0 rounded-bl-xl bg-gradient-to-l from-red to-red-deep px-3 py-1 font-serif-hi text-[11px] font-bold tracking-wider text-white shadow-sm sm:px-4 sm:py-1.5 sm:text-[12px]">
-              80% OFF · LIMITED OFFER
+              90% OFF · LIMITED OFFER
             </div>
 
             <div className="mb-5 sm:mb-6">
@@ -144,7 +144,7 @@ export default function Pricing() {
             >
               <Clock className="h-4 w-4 shrink-0 text-red-deep" />
               <span className="text-[13px] font-bold text-red-deep">
-                80% OFF खत्म होने में बचा समय:{" "}
+                90% OFF खत्म होने में बचा समय:{" "}
                 <span className="font-serif-hi text-[15px] tracking-wider">{countdown}</span>
               </span>
             </motion.div>

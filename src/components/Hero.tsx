@@ -25,15 +25,15 @@ export default function Hero() {
               className="mb-5 inline-flex items-center gap-2 font-serif-hi text-[13px] font-bold tracking-wide text-red-deep"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-red-deep" />
-              फ्री लाइव डेमो उपलब्ध
+              रिस्क-फ्री शुरुआत — पहले देखें, फिर तय करें
             </motion.span>
 
             <motion.h1
               variants={item}
               className="font-serif-hi text-[clamp(28px,4.3vw,48px)] font-bold leading-[1.26] text-ink"
             >
-              बिज़नेस कोई भी हो, अपनी वेबसाइट अब सिर्फ़{" "}
-              <em className="not-italic text-red">₹999</em> में लाइव करें
+              कोई भी बिज़नेस हो, वेबसाइट अब सिर्फ़ {" "}
+              <em className="not-italic text-red">₹999</em> में तैयार
             </motion.h1>
 
             {/* Price contrast block */}
@@ -51,7 +51,7 @@ export default function Hero() {
                 80% OFF
               </span>
               <span className="w-full text-[11px] font-semibold text-gold-deep">
-                वन-टाइम · कोई छुपा चार्ज नहीं
+                एक बार में क्लियर · कोई सरप्राइज़ चार्ज नहीं
               </span>
             </motion.div>
 
@@ -59,8 +59,8 @@ export default function Hero() {
               variants={item}
               className="mt-4 max-w-[480px] text-[15px] leading-[1.75] text-muted sm:text-[16.5px]"
             >
-              पहले हम आपके बिज़नेस की वेबसाइट बनाकर दिखाते हैं। पसंद आए तभी
-              भुगतान करें — कोई एडवांस नहीं, कोई शर्त नहीं।
+              हम भरोसे पर काम करते हैं —
+              शर्तों का कोई झंझट नहीं।
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-col items-start gap-3">
@@ -75,7 +75,7 @@ export default function Hero() {
                 className="inline-flex w-full items-center justify-center gap-2.5 rounded bg-red px-6 py-4 text-[15px] font-bold text-white shadow-[0_3px_0_var(--color-red-deep)] transition-shadow sm:w-auto sm:text-[15.5px]"
               >
                 <MessageCircle className="h-[18px] w-[18px]" />
-                WhatsApp पर फ्री Demo बुक करें
+                WhatsApp पर बात करके शुरू करें
               </motion.a>
 
               {/* Trust icon row */}
@@ -99,9 +99,7 @@ export default function Hero() {
                 ))}
               </motion.div>
 
-              <span className="text-[12px] text-muted">
-                जानकारी भरते ही WhatsApp खुल जाएगा — बिना नंबर सेव किए चैट शुरू करें
-              </span>
+
             </motion.div>
           </motion.div>
 
@@ -123,7 +121,7 @@ export default function Hero() {
                 </span>
                 <span className="text-left">
                   <b className="block text-xs font-bold leading-tight text-ink">
-                    0% एडवांस पेमेंट
+                    ₹399 एडवांस पेमेंट
                   </b>
                   <span className="mt-0.5 block text-[10px] text-muted sm:text-[10.5px]">
                     100% रिस्क-फ्री गारंटी
@@ -250,8 +248,8 @@ function Bubble({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}
       className={`max-w-[82%] rounded-[9px] px-3 pb-2 pt-2.5 text-[13.3px] leading-[1.55] shadow-sm ${align === "left"
-          ? "self-start rounded-tl-[2px] bg-white text-ink"
-          : "self-end rounded-tr-[2px] bg-[#e8f5df] text-[#1c3b12]"
+        ? "self-start rounded-tl-[2px] bg-white text-ink"
+        : "self-end rounded-tr-[2px] bg-[#e8f5df] text-[#1c3b12]"
         }`}
     >
       {children}

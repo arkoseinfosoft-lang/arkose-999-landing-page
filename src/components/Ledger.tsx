@@ -16,7 +16,7 @@ export default function Ledger() {
               ₹999 में आपको <em className="not-italic text-red">असल में</em> क्या मिलता है
             </>
           }
-          body="हम छोटे बिज़नेस ओनर्स के लिए तेज़, प्रीमियम 1-पेज सेल्स वेबसाइट बनाते हैं। नीचे साफ़-साफ़ लिखा है क्या शामिल है और क्या नहीं — कोई स्कैम नहीं, पूरी पारदर्शिता।"
+          body="हम छोटे बिज़नेस ओनर्स के लिए तेज़, प्रीमियम सेल्स वेबसाइट बनाते हैं। नीचे साफ़-साफ़ लिखा है क्या शामिल है और क्या नहीं — कोई स्कैम नहीं, पूरी पारदर्शिता।"
         />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <Reveal
@@ -59,7 +59,7 @@ export default function Ledger() {
           delay={0.2}
           className="mt-6 rounded-lg bg-red-deep px-6 py-4 text-center text-[13.5px] font-semibold text-[#fff9ee] shadow-[0_8px_20px_rgba(140,32,21,0.12)]"
         >
-          जो भी सीरियस बिज़नेस ओनर अभी शुरू करना चाहते हैं, नीचे फॉर्म भरें — हम जल्द कॉन्टैक्ट करेंगे
+          आज ही शुरुआत करने के लिए WhatsApp पर लिखें — हमारी टीम जल्द आपसे जुड़ेगी
         </Reveal>
       </div>
     </section>

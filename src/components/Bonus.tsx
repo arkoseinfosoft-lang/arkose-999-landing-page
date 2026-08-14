@@ -26,16 +26,16 @@ export default function Bonus() {
           <div className="mb-7 text-center sm:mb-9">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-red-tint px-3 py-1 font-serif-hi text-[12.5px] font-bold tracking-wide text-red-deep">
               <Gift className="h-3.5 w-3.5" />
-              <span>आज शुरुआत करने पर विशेष उपहार</span>
+              <span>लिमिटेड टाइम बोनस ऑफर</span>
             </span>
             <h2 className="mt-3 mb-1.5 font-serif text-[clamp(26px,4vw,38px)] font-bold text-ink leading-tight">
-              Exclusive <span className="font-serif italic text-red-deep">Bonuses</span>
+              फ्री <span className="font-serif italic text-red-deep"> बोनस पैक</span>
             </h2>
             <div className="font-serif-hi text-[clamp(16px,2vw,19px)] font-bold text-ink/90">
-              ₹3,500 मूल्य के 2 प्रीमियम बोनस बिल्कुल फ़्री
+              ₹3,500 की वैल्यू वाले 2 गिफ्ट्स बिना किसी चार्ज के
             </div>
             <p className="mx-auto mt-2 max-w-[520px] text-[13.5px] leading-relaxed text-muted sm:text-[14px]">
-              आज ही अपनी ₹999 वेबसाइट ऑर्डर करें और अपने बिज़नेस की ग्रोथ के लिए ये दोनों बोनस 100% मुफ़्त पाएं।
+              आज ऑर्डर करने वालों को ये दोनों बोनस बिना किसी चार्ज के मिलेंगे।
             </p>
           </div>
 
@@ -155,7 +155,7 @@ export default function Bonus() {
               rel="noreferrer"
               className="inline-flex w-full items-center justify-center gap-2 rounded bg-red px-7 py-3.5 text-[15px] font-bold text-white shadow-[0_4px_14px_rgba(195,53,38,0.35),0_3px_0_var(--color-red-deep)] transition-all sm:w-auto sm:py-4 sm:text-[16px]"
             >
-              <span>अभी फ़ॉर्म भरें और दोनों बोनस क्लेम करें</span>
+              <span>अभी क्लेम करें — दोनों बोनस फ्री</span>
               <ArrowRight className="h-4 w-4" />
             </motion.a>
           </div>
